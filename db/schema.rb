@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 2020_01_05_065949) do
     t.string "name", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "user_image", null: false
+    t.string "user_image"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
