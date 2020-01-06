@@ -25,7 +25,7 @@
                 ようこそ　<%= current_user.name %> 様
               </li>
               <li>
-         　　　 <%= link_to "Home", user_path(@user), class:"btn btn-default rounded-pill",style:  "color:white;" %>
+         　　　 <%= link_to "Home", root_path, class:"btn btn-default rounded-pill",style:  "color:white;" %>
               </li>
               <li>
          　　　 <%= link_to "My Page", user_path(@user), class:"btn btn-default rounded-pill",style:  "color:white;" %>
@@ -35,7 +35,7 @@
 
             <% else %>
               <li>
-         　　　 <%= link_to "Home", user_path(@user), class:"btn btn-default rounded-pill",style:  "color:white;" %>
+         　　　 <%= link_to "Home", root_path, class:"btn btn-default rounded-pill",style:  "color:white;" %>
               </li>
               <li>
          　　　 <%= link_to "Log in", new_user_session_path, class:"btn btn-default rounded-pill",style:  "color:white;" %>

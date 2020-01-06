@@ -1,0 +1,6 @@
+<% if @status == 'success' %>
+<%  elsif @status == 'fail' %>
+    alert('error!');
+<% end %>
+$("#post-modal").modal("hide");
+$("#post-all").append("<%= escape_javascript(render 'post_create', post: @post) %>")

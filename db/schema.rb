@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_05_065949) do
+ActiveRecord::Schema.define(version: 2020_01_06_084027) do
 
   create_table "genres", force: :cascade do |t|
     t.string "name", null: false
@@ -29,8 +29,7 @@ ActiveRecord::Schema.define(version: 2020_01_05_065949) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "genre_id", null: false
-    t.string "post_image", null: false
+    t.string "post_image_id", null: false
     t.text "post_content", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -51,7 +50,7 @@ ActiveRecord::Schema.define(version: 2020_01_05_065949) do
     t.string "name", default: "", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
-    t.string "user_image"
+    t.string "user_image_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
