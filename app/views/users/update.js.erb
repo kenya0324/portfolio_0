@@ -3,3 +3,4 @@
     alert('error!');
 <% end %>
 $("#user-modal").modal("hide");
+$("#user-info").html("<%= escape_javascript(render 'user-info', user: @user) %>")

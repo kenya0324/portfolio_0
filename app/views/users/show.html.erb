@@ -1,7 +1,9 @@
 <h4>Mypage</h4>
-<%= attachment_image_tag @user, :user_image, :fill,100,100, fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg" %>
-<%= @user.name %>
-<%= @user.email %>
+<div id="user-info">
+	<p id="user-image"><%= attachment_image_tag @user, :user_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "100x100" %></p>
+	<p id="user-name"><%= @user.name %></p>
+	<p id="user-email"><%= @user.email %></p>
+</div>
 <%= link_to 'edit', edit_user_path(@user), remote: true, class: "btn btn-lg, btn-primary" %>
 
 <div class="modal fade" id="user-modal" tabshow="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"></div>
