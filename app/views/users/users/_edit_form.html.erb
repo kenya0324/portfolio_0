@@ -1,0 +1,36 @@
+<div class="container clearfix">
+	<div class="modal-dialog" role="document">
+		<div class="user_show_m modal-content">
+
+			<%= form_for @user,url:users_user_path, remote: true do |f| %>
+
+			    <div class="modal-header">
+	                <h4 class="modal-title">edit</h4>
+	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+	                   <span aria-hidden="true">&times;</span>
+	                </button>
+	            </div>
+
+			    <div class="modal-body">
+						<div class="user_show_image">
+							<%= f.attachment_field :user_image%>
+						</div>
+						<div class="user_show_name">
+						    <%= f.text_field :name, class:"form-control" %>
+						</div>
+						<div class="user_show_email">
+						    <%= f.text_field :email, class:"form-control" %>
+						</div>
+				</div>
+
+				<div class="modal-footer actions">
+					<div class="post_new_image">
+					    <%= f.submit class:"btn btn-primary"%>
+					</div>
+				</div>
+
+			 <% end %>
+
+        </div>
+    </div>
+</div>
