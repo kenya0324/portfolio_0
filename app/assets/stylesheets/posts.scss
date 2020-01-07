@@ -1,3 +1,49 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post{
+	float: left;
+	border: 2px solid whitesmoke;
+	margin: 10px;
+	padding: 3px;
+}
+
+.post_index_iine{
+	margin-left: 20px;
+	height: 150px;
+}
+
+.post_index_show{
+	text-align: right;
+	margin-right: 20px;
+	margin-bottom: 5px;
+}
+
+.post_index_content{
+	margin-top: 210px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+	border: 2px solid whitesmoke;
+	height: 100px;
+	width: 279px;
+}
+
+.post_new_image{
+	height: 50px;
+}
+
+.post_new_content{
+	height: 95px;
+}
+
+.post_index_m{
+	width: 300px;
+    height: 320px;
+}
+
+input[type="text"] {
+        width: 465px;
+        height: 100px;
+    }
+

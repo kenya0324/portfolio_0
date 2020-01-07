@@ -1,9 +1,11 @@
-class PostsController < ApplicationController
+class Users::PostsController < ApplicationController
   def index
       @posts = Post.all
+      @like = Like.new
   end
 
   def show
+      @post = Post.find(params[:id])
   end
 
   def new
