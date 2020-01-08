@@ -1,0 +1,26 @@
+<div class="container clearfix">
+
+	<%= link_to '登録', new_admins_category_path, remote: true, class: "btn btn-sm, btn-primary" %>
+
+	<div class="row">
+	 <div id="category-all">
+		<% @categories.each do |cate| %>
+
+		    <div class="category">
+			  <div class="category_index_name">
+			  	<%= cate.name %>
+			  </div>
+		    </div>
+
+		<% end %>
+	 </div>
+    </div>
+
+	    <div class="modal fade " id="category-modal" tabshow="-1" role="dialog " aria-labelledby="exampleModalLabel" aria-hidden="true">
+		   <div class="modal-dialog">
+		   	  <div class="category_index_m modal-content">
+		   	  </div>
+		   </div>
+		</div>
+
+</div>

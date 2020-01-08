@@ -1,3 +1,3 @@
-class Genre < ApplicationRecord
+class Category < ApplicationRecord
 	has_many :posts, dependent: :destroy
 end
