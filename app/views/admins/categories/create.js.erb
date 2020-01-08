@@ -1,0 +1,6 @@
+<% if @status == 'success' %>
+<%  elsif @status == 'fail' %>
+    alert('error!');
+<% end %>
+$("#category-modal").modal("hide");
+$("#category-all").append("<%= escape_javascript(render 'category_create', category: @category) %>")
