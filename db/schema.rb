@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_08_023120) do
+ActiveRecord::Schema.define(version: 2020_01_08_083256) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -30,6 +30,23 @@ ActiveRecord::Schema.define(version: 2020_01_08_023120) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "hashtags", force: :cascade do |t|
+    t.string "hashname"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hashname"], name: "index_hashtags_on_hashname", unique: true
+  end
+
+  create_table "hashtags_posts", force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "hashtag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hashtag_id"], name: "index_hashtags_posts_on_hashtag_id"
+    t.index ["post_id", "hashtag_id"], name: "index_hashtags_posts_on_post_id_and_hashtag_id", unique: true
+    t.index ["post_id"], name: "index_hashtags_posts_on_post_id"
+  end
+
   create_table "likes", force: :cascade do |t|
     t.integer "post_id"
     t.integer "user_id"
@@ -41,12 +58,13 @@ ActiveRecord::Schema.define(version: 2020_01_08_023120) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id", null: false
+    t.integer "category_id", null: false
     t.string "post_image_id", null: false
     t.text "post_content", null: false
+    t.text "url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "deleted_at"
-    t.integer "category_id"
   end
 
   create_table "relationships", force: :cascade do |t|
@@ -64,13 +82,13 @@ ActiveRecord::Schema.define(version: 2020_01_08_023120) do
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "user_image_id"
+    t.text "introduction"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "deleted_at"
-    t.text "introduction"
     t.index ["deleted_at"], name: "index_users_on_deleted_at"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -15,10 +15,11 @@
 						<div class="post_new_image">
 							<%= f.attachment_field :post_image%>
 						</div>
+						    <%= f.text_field :url, class:"form-control" %>
 						<div class="post_new_content">
 						    <%= f.text_field :post_content, class:"form-control" %>
 						</div>
-					        <%= f.url_filed :post_item_url %>
+					        <%= f.collection_select :category_id, Category.all, :id, :name %>
 						    <%= f.hidden_field :user_id, :value => current_user.id %>
 				</div>
 

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'users/posts#index'
+  get '/post/hashtag/:name', to: "users/posts#hashtag"
+  get 'category/:id' => 'users/posts#category'
   post   '/like/:post_id' => 'users/likes#like',   as: 'like'
   delete '/like/:post_id' => 'users/likes#unlike', as: 'unlike'
 

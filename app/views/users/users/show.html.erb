@@ -41,6 +41,9 @@
 			  <div class="post_index_iine">
 				<%= render 'users/posts/posts', post: post %>
 			  </div>
+              <div class="post_index_content">
+			    <%= post.category.name %>
+			  </div>
 			  <div class="post_index_content">
 			  	<%= post.post_content %>
 			  </div>
