@@ -24,6 +24,8 @@ class Users::PostsController < ApplicationController
   def show
       @post = Post.find(params[:id])
       @user = User.find_by(id: @post.user_id)
+      @comment = Comment.new
+      @comments = @post.comments
   end
 
   def new
@@ -51,6 +53,6 @@ class Users::PostsController < ApplicationController
 
  private
   def post_params
-      params.require(:post).permit(:user_id, :category_id, :post_image, :post_content, :post_name, :url)
+      params.require(:post).permit(:user_id, :category_id, :post_image, :post_content, :post_name, :url ,:content)
   end
 end

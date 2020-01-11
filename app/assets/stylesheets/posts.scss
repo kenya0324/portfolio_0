@@ -96,6 +96,43 @@
 	margin-bottom: 10px;
 }
 
+.post_show_all{
+	margin-bottom: 20px;
+
+}
+.post_comment_index_all{
+	margin-top: 15px;
+}
+
+.post_comment_index_title{
+	margin-left: 5px;
+}
+
+.post_comment_index_top{
+	margin-bottom: 20px;
+}
+
+.post_comment_index{
+    border: 2px solid whitesmoke;
+    width: 600px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.post_comment_index_content{
+	border-bottom: 2px solid whitesmoke;
+	width: 575px;
+}
+
+.post_comment_index_delete{
+	margin-top: 12px;
+	margin-left: 110px;
+}
+
+.post_comment_index_submit{
+	margin-top: 5px;
+}
+
 #post_post_name{
 	height: 40px;
 }
@@ -103,6 +140,10 @@
 
 #post_url{
 	height: 40px;
+}
+
+#comment_content{
+	height: 60px;
 }
 
 input[type="text"] {
