@@ -13,13 +13,25 @@
 
 	            <div class="modal-body">
 						<div class="post_new_image">
+							<p>商品画像</p>
 							<%= f.attachment_field :post_image%>
 						</div>
+						<div class="post_new_post_name">
+						    <p>商品名</p>
+						    <%= f.text_field :post_name, class:"form-control aaaaaaaa" %>
+						</div>
+						<div class="post_new_post_url">
+						    <p>販売サイトURL</p>
 						    <%= f.text_field :url, class:"form-control" %>
+						</div>
 						<div class="post_new_content">
+							<p>説明文</p>
 						    <%= f.text_field :post_content, class:"form-control" %>
 						</div>
+						<div class="post_new_category">
+							<p>カテゴリー選択</p>
 					        <%= f.collection_select :category_id, Category.all, :id, :name %>
+					    </div>
 						    <%= f.hidden_field :user_id, :value => current_user.id %>
 				</div>
 

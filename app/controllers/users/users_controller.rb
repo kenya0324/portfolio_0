@@ -1,6 +1,7 @@
 class Users::UsersController < ApplicationController
   def show
   	  @user = User.find(params[:id])
+      @like = Like.new
   end
 
   def edit
@@ -27,6 +28,23 @@ class Users::UsersController < ApplicationController
       @user = User.find(params[:id])
       @user.destroy
       redirect_to posts_path
+  end
+
+  def following
+      @user  = User.find(params[:id])
+      @users = @user.followings
+      render 'show_follow'
+  end
+
+  def followers
+      @user  = User.find(params[:id])
+      @users = @user.followers
+      render 'show_follower'
+  end
+
+  def want
+      @user = User.find(params[:id])
+      @like = Like.new
   end
 
  private
