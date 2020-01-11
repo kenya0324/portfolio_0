@@ -8,6 +8,7 @@
 
               <div class="user_show_image">
 				<%= attachment_image_tag @user, :user_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "100x100" %>
+				<%= render 'follow_form' %>
 			  </div>
 			  <div class="user_show_user_name">
 		        <%= @user.name %>
@@ -15,13 +16,21 @@
 		      <div class="user_show_user_email">
 			    <%= @user.email %>
 			  </div>
+			  <div class="user_show_user_follow_count">
+				  <div class="follow" id = "follow-count">
+	　　　           <%= render 'follow_count' %>
+	              </div>
+	          </div>
+
+
 
 
 			</div>
 		  </div>
 
                <div class="col-3">
-			     <%= link_to 'edit', edit_users_user_path(@user), remote: true, class:"btn-sm btn-light " %>
+               	 <p><%= link_to 'want list', want_path(@user),class:"btn-sm btn-light " %></p>
+			     <p><%= link_to 'edit', edit_users_user_path(@user), remote: true, class:"btn-sm btn-light " %></p>
                </div>
 
 			<div class="modal fade" id="user-modal" tabshow="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -37,22 +46,94 @@
         	<% @user.posts.each do |post| %>
 
         	<div class="post">
-				<%= attachment_image_tag post, :post_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "300x300" %>
-			  <div class="post_index_iine">
-				<%= render 'users/posts/posts', post: post %>
-			  </div>
-              <div class="post_index_content">
-			    <%= post.category.name %>
-			  </div>
-			  <div class="post_index_content">
-			  	<%= post.post_content %>
-			  </div>
-			  <div class="post_index_show">
-				<%= link_to '詳細', users_post_path(post), class:"btn-sm btn-light " %>
-			  </div>
+		    	      <div class="post_index_user_name_image">
+			    	    <%= attachment_image_tag post.user, :user_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "50x50" %>
+				        <%= link_to "#{post.user.name}" , users_user_path(post.user_id) %>
+				      </div>
+				      <div class="post_index_post_image">
+					    <%= attachment_image_tag post, :post_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "300x300" %>
+					  </div>
+				<div class="row">
+				   <div class="col-6">
+					  <div class="post_index_iine">
+						<%= render 'users/posts/posts', post: post %>
+					  </div>
+				   </div>
+				   <div class="col-6">
+					  <div class="post_index_post_category">
+						 <%= post.category.name %>
+					  </div>
+				   </div>
+				</div>
+					  <div class="post_index_post_name">
+					     <%= post.post_name %>
+					  </div>
+					  <div class="post_index_content">
+					  	 <%= render_with_hashtags(post.post_content) %>
+					  </div>
+			    <div class="row">
+			       <div class="col-6">
+			       	  <div class="post_index_url">
+					      <a href= <%= post.url %>>販売サイト</a>
+					  </div>
+				   </div>
+				   <div class="col-6">
+					  <div class="post_index_show">
+						  <%= link_to '詳細', users_post_path(post), class:"btn-sm btn-light " %>
+					  </div>
+				   </div>
+			    </div>
 		    </div>
 
-        	<% end %>
+		    <% end %>
+
+
+	    </div>
+
+	    <div class="row">
+
+		    <% @user.liked_posts.each do |post| %>
+		    <div class="post">
+		    	      <div class="post_index_user_name_image">
+			    	    <%= attachment_image_tag post.user, :user_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "50x50" %>
+				        <%= link_to "#{post.user.name}" , users_user_path(post.user_id) %>
+				      </div>
+				      <div class="post_index_post_image">
+					    <%= attachment_image_tag post, :post_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "300x300" %>
+					  </div>
+				<div class="row">
+				   <div class="col-6">
+					  <div class="post_index_iine">
+						<%= render 'users/posts/posts', post: post %>
+					  </div>
+				   </div>
+				   <div class="col-6">
+					  <div class="post_index_post_category">
+						 <%= post.category.name %>
+					  </div>
+				   </div>
+				</div>
+					  <div class="post_index_post_name">
+					     <%= post.post_name %>
+					  </div>
+					  <div class="post_index_content">
+					  	 <%= render_with_hashtags(post.post_content) %>
+					  </div>
+			    <div class="row">
+			       <div class="col-6">
+			       	  <div class="post_index_url">
+					      <a href= <%= post.url %>>販売サイト</a>
+					  </div>
+				   </div>
+				   <div class="col-6">
+					  <div class="post_index_show">
+						  <%= link_to '詳細', users_post_path(post), class:"btn-sm btn-light " %>
+					  </div>
+				   </div>
+			    </div>
+		    </div>
+
+		    <% end %>
 
         </div>
 </div>

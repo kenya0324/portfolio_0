@@ -1,4 +1,6 @@
 class Users::PostsController < ApplicationController
+  before_action :authenticate_user!
+
   def index
       @posts = Post.all
       @like = Like.new
@@ -21,6 +23,7 @@ class Users::PostsController < ApplicationController
 
   def show
       @post = Post.find(params[:id])
+      @user = User.find_by(id: @post.user_id)
   end
 
   def new
@@ -29,6 +32,7 @@ class Users::PostsController < ApplicationController
 
   def create
       @post = Post.new(post_params)
+      @post.user_id = current_user.id
       respond_to do |format|
        if @post.save!
          format.html { redirect_to @post }
@@ -47,6 +51,6 @@ class Users::PostsController < ApplicationController
 
  private
   def post_params
-      params.require(:post).permit(:user_id, :category_id, :post_image, :post_content)
+      params.require(:post).permit(:user_id, :category_id, :post_image, :post_content, :post_name, :url)
   end
 end
