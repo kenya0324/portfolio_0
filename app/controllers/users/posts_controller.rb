@@ -2,14 +2,14 @@ class Users::PostsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-      @posts = Post.all
+      @posts = Post.all.order(created_at: :desc)
       @like = Like.new
       @categories = Category.all
   end
 
   def category
       @category = Category.find(params[:id])
-      @post = Post.where(category_id:@category.id)
+      @post = Post.where(category_id:@category.id).order(created_at: :desc)
       @categories = Category.all
       @like = Like.new
   end
@@ -18,7 +18,14 @@ class Users::PostsController < ApplicationController
       @user = current_user
       @tag = Hashtag.find_by(hashname: params[:name])
       @posts = @tag.posts.build
-      @post  = @tag.posts.page(params[:page])
+      @post  = @tag.posts.page(params[:page]).order(created_at: :desc)
+      @categories = Category.all
+  end
+
+  def search
+      @posts = Post.where('posts.post_name LIKE(?)', "%#{params[:search]}%").order(created_at: :desc)
+      @categories = Category.all
+      @like = Like.new
   end
 
   def show
@@ -26,6 +33,7 @@ class Users::PostsController < ApplicationController
       @user = User.find_by(id: @post.user_id)
       @comment = Comment.new
       @comments = @post.comments
+      @categories = Category.all
   end
 
   def new
@@ -53,6 +61,6 @@ class Users::PostsController < ApplicationController
 
  private
   def post_params
-      params.require(:post).permit(:user_id, :category_id, :post_image, :post_content, :post_name, :url ,:content)
+      params.require(:post).permit(:user_id, :category_id, :hashtag_id, :post_image, :post_content, :post_name, :url ,:content)
   end
 end

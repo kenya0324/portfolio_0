@@ -1,6 +1,8 @@
 <div class="container clearfix">
 
+      <div class="user_show_title">
 		<h4>Mypage</h4>
+      </div>
 
 		<div class="row">
 		  <div class="user_show_info">
@@ -8,29 +10,27 @@
 
               <div class="user_show_image">
 				<%= attachment_image_tag @user, :user_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "100x100" %>
-				<%= render 'follow_form' %>
 			  </div>
 			  <div class="user_show_user_name">
 		        <%= @user.name %>
 		      </div>
-		      <div class="user_show_user_email">
-			    <%= @user.email %>
+              <div class="user_show_user_introduction">
+			    <%= @user.introduction %>
 			  </div>
-			  <div class="user_show_user_follow_count">
-				  <div class="follow" id = "follow-count">
-	　　　           <%= render 'follow_count' %>
-	              </div>
-	          </div>
+			  <div class="user_show_follow" id = "follow-count">
+		        <%= render 'follow_count' %>
+		      </div>
 
 
 
 
-			</div>
 		  </div>
+		</div>
 
                <div class="col-3">
-               	 <p><%= link_to 'want list', want_path(@user),class:"btn-sm btn-light " %></p>
-			     <p><%= link_to 'edit', edit_users_user_path(@user), remote: true, class:"btn-sm btn-light " %></p>
+               	 <%= render 'users/users/follow_form' %>
+               	 <%= link_to 'want list', want_path(@user),class:"btn-sm btn-light " %>
+			     <%= link_to 'edit', edit_users_user_path(@user), remote: true, class:"btn-sm btn-light " %>
                </div>
 
 			<div class="modal fade" id="user-modal" tabshow="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -42,6 +42,7 @@
         </div>
 
         <div class="row">
+          <div id="post-all">
 
         	<% @user.posts.each do |post| %>
 
@@ -61,7 +62,11 @@
 				   </div>
 				   <div class="col-6">
 					  <div class="post_index_post_category">
+					  	<div id="post_index_category_link">
+					  	 <%= link_to "/category/#{post.category.id}" do  %>
 						 <%= post.category.name %>
+						 <% end %>
+						</div>
 					  </div>
 				   </div>
 				</div>
@@ -74,12 +79,16 @@
 			    <div class="row">
 			       <div class="col-6">
 			       	  <div class="post_index_url">
-					      <a href= <%= post.url %>>販売サイト</a>
+			       	  	<div id="post_url_link">
+					      <a href= <%= post.url %>>shop</a>
+					    </div>
 					  </div>
 				   </div>
 				   <div class="col-6">
 					  <div class="post_index_show">
+					  	<div id="post_index_show_link">
 						  <%= link_to '詳細', users_post_path(post), class:"btn-sm btn-light " %>
+						</div>
 					  </div>
 				   </div>
 			    </div>
@@ -87,7 +96,7 @@
 
 		    <% end %>
 
-
+          </div>
 	    </div>
 
 </div>

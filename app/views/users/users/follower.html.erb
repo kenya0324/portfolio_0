@@ -1,0 +1,24 @@
+<div class="container clearfix">
+
+	<% if user_signed_in? %>
+
+		<% @user.followers.each do |user| %>
+		  <%= attachment_image_tag user, :user_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "100x100" %>
+		  <%= render 'users/users/follow_form' %>
+		  <%= user.name %>
+		  <%= link_to '詳細', users_user_path(user) , class:"btn-sm btn-light "%>
+		<% end %>
+
+	<% else %>
+
+	    <% @user.followers.each do |user| %>
+		  <%= attachment_image_tag user, :user_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "100x100" %>
+		  <%= user.name %>
+		  <%= link_to '詳細', users_user_path(user) , class:"btn-sm btn-light "%>
+		<% end %>
+
+    <% end %>
+
+
+
+</div>

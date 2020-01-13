@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.user_show_title{
+	margin-left: 50px;
+}
 
 .user_show_info{
 	width: 500px;
@@ -11,29 +14,48 @@
 .user_show_image{
 	margin-bottom: 20px;
 	float: left;
+	border-radius: 40px;
+	width: 100px;
 }
 
 .user_show_user_name{
 	margin-left: 120px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	border-bottom: 2px solid whitesmoke;
 	width: 200px;
 }
 
 .user_show_user_email{
 	margin-left: 120px;
+	margin-bottom: 20px;
 	border-bottom: 2px solid whitesmoke;
 	width: 200px;
 }
 
-.user_show_user_follow_count{
-	margin-top: 10px;
+.user_show_user_introduction{
 	margin-left: 120px;
-	margin-bottom: 20px;
+	border-bottom: 2px solid whitesmoke;
 	width: 200px;
 }
 
+.user_show_follow{
+	margin-top: 10px;
+}
+
+.stats{
+	width: 300px;
+	margin-left: 120px;
+}
+
+
+#edit_user_2{
+	float: left;
+}
 .user_show_m{
 	width: 300px;
-    height: 320px;
+    height: 550px;
+}
+
+.user_want_title{
+	margin-left: 50px;
 }

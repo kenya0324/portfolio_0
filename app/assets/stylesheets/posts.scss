@@ -2,11 +2,86 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.nav_search{
+	margin-top: 5px;
+	width: 760px;
+	text-align: center;
+}
+
+
+.search_button{
+	color: black;
+	background: white;
+	border-radius: 20px;
+	text-decoration: none;
+
+}
+
+.search_button:hover {
+    background: #333;
+}
+
+#search_button_link a{
+    text-decoration: none;
+}
+
+.nav_category{
+	padding: 10px;
+}
+
+.post_category_title{
+	margin-left: 20px;
+}
+
+#post_category a{
+    color: black;
+}
+
+
 .post{
 	float: left;
 	border: 2px solid whitesmoke;
 	margin: 10px;
 	padding: 3px;
+}
+
+.fixed_post{
+  font-size: 25px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 200px;
+  border: 2px solid whitesmoke;
+  display: inline-block;
+  padding: 0.6em 2em;
+  margin: 0 0 1em;
+  background: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.fixed_post:hover {
+    font-size: 25px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 200px;
+    background: #333;
+    border: 1px #333;
+}
+
+#post_link a{
+    text-decoration: none;
+    color: black;
+}
+
+img {
+    border-radius: 30px;
+}
+
+#post-all{
+	margin-left: 45px;
 }
 
 .post_index_show{
@@ -35,15 +110,33 @@
 .iine__button{
 	margin-left: 10px;
 	font-size: 20px;
+	color: #333;
 }
+
+.iine__button :hover{
+	color: dimgray;
+}
+
 
 .post_index_post_category{
 	height: 30px;
 	width: 95px;
 	margin-left: 29px;
 	text-align: center;
+	border-radius: 10px;
 	border: 2px solid whitesmoke;
 }
+
+.post_index_post_category :hover{
+	background: #333;
+	border-radius: 10px;
+}
+
+#post_index_category_link a{
+    text-decoration: none;
+    color: black;
+}
+
 
 .post_index_post_name{
 	margin-left: 20px;
@@ -69,8 +162,20 @@
 	text-align: center;
 	border-radius: 10px;
 	margin-left: 20px;
-	text-decoration-color: #ffffff;
-	background: linear-gradient(#ffffff, #f5f5f5);
+	background: gold;
+}
+
+.post_index_url:hover {
+    background: yellow;
+}
+
+#post_url_link a{
+	text-decoration: none;
+    color: black;
+}
+
+#post_index_show_link a{
+	text-decoration: none;
 }
 
 
@@ -146,8 +251,5 @@
 	height: 60px;
 }
 
-input[type="text"] {
-        width: 465px;
-        height: 100px;
-    }
+
 

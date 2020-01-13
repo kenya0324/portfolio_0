@@ -2,6 +2,7 @@ class Users::UsersController < ApplicationController
   def show
   	  @user = User.find(params[:id])
       @like = Like.new
+      @categories = Category.all
   end
 
   def edit
@@ -33,23 +34,26 @@ class Users::UsersController < ApplicationController
   def following
       @user  = User.find(params[:id])
       @users = @user.followings
-      render 'show_follow'
+      @categories = Category.all
+      render 'following'
   end
 
   def followers
       @user  = User.find(params[:id])
       @users = @user.followers
-      render 'show_follower'
+      @categories = Category.all
+      render 'follower'
   end
 
   def want
       @user = User.find(params[:id])
       @like = Like.new
+      @categories = Category.all
   end
 
  private
   def user_params
-      params.require(:user).permit(:name, :email, :user_image)
+      params.require(:user).permit(:name, :email, :introduction, :user_image)
   end
 
 end
