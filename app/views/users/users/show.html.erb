@@ -28,7 +28,7 @@
 		</div>
 
                <div class="col-3">
-               	 <%= render 'users/users/follow_form' %>
+               	 <%= render 'users/users/follow_form', user: @user %>
                	 <%= link_to 'want list', want_path(@user),class:"btn-sm btn-light " %>
 			     <%= link_to 'edit', edit_users_user_path(@user), remote: true, class:"btn-sm btn-light " %>
                </div>

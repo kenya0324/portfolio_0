@@ -76,4 +76,6 @@ gem 'paranoia'
 
 gem 'data-confirm-modal'
 
+gem 'pry-byebug'
+
 

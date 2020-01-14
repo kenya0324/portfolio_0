@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root 'users/posts#index'
+  get '/users/posts/follow_index' => 'users/posts/follow_index', as:'follow_index'
   get "/search" => "users/posts#search"
   get '/post/hashtag/:name' => 'users/posts#hashtag'
   get '/category/:id' => 'users/posts#category'
