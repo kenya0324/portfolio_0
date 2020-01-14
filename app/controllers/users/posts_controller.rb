@@ -5,6 +5,47 @@ class Users::PostsController < ApplicationController
       @posts = Post.all.order(created_at: :desc)
       @like = Like.new
       @categories = Category.all
+      @all_ranks = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
+
+      @post_posts = Post.all.order(created_at: :desc)
+      @user = User.find(current_user.id)
+      like = @user.likes.last
+      post = like.post
+      category_recommend = Category.find_by(name: post.category.name)
+      post_recommend = category_recommend.posts
+      likes = Like.where(user_id: @user.id)
+      x = []
+      likes.each do |like|
+        x << like.post_id
+      end
+
+      @likes_recommend = post_recommend.where.not(id: x)
+      @random = Post.order("Random()").last
+  end
+
+  def follow_index
+      @posts_all = Post.all.order(created_at: :desc)
+      @user = User.find(current_user.id)
+      @follow_users = @user.followings
+      @posts = @posts_all.where(user_id: @follow_users).order("created_at DESC")
+      @categories = Category.all
+      @like = Like.new
+      @all_ranks = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
+
+      @post_posts = Post.all.order(created_at: :desc)
+      @user = User.find(current_user.id)
+      like = @user.likes.last
+      post = like.post
+      category_recommend = Category.find_by(name: post.category.name)
+      post_recommend = category_recommend.posts
+      likes = Like.where(user_id: @user.id)
+      x = []
+      likes.each do |like|
+        x << like.post_id
+      end
+
+      @likes_recommend = post_recommend.where.not(id: x)
+      @random = Post.order("Random()").last
   end
 
   def category
@@ -12,6 +53,22 @@ class Users::PostsController < ApplicationController
       @post = Post.where(category_id:@category.id).order(created_at: :desc)
       @categories = Category.all
       @like = Like.new
+      @all_ranks = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
+
+      @post_posts = Post.all.order(created_at: :desc)
+      @user = User.find(current_user.id)
+      like = @user.likes.last
+      post = like.post
+      category_recommend = Category.find_by(name: post.category.name)
+      post_recommend = category_recommend.posts
+      likes = Like.where(user_id: @user.id)
+      x = []
+      likes.each do |like|
+        x << like.post_id
+      end
+
+      @likes_recommend = post_recommend.where.not(id: x)
+      @random = Post.order("Random()").last
   end
 
   def hashtag
@@ -20,12 +77,44 @@ class Users::PostsController < ApplicationController
       @posts = @tag.posts.build
       @post  = @tag.posts.page(params[:page]).order(created_at: :desc)
       @categories = Category.all
+      @all_ranks = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
+
+      @post_posts = Post.all.order(created_at: :desc)
+      @user = User.find(current_user.id)
+      like = @user.likes.last
+      post = like.post
+      category_recommend = Category.find_by(name: post.category.name)
+      post_recommend = category_recommend.posts
+      likes = Like.where(user_id: @user.id)
+      x = []
+      likes.each do |like|
+        x << like.post_id
+      end
+
+      @likes_recommend = post_recommend.where.not(id: x)
+      @random = Post.order("Random()").last
   end
 
   def search
       @posts = Post.where('posts.post_name LIKE(?)', "%#{params[:search]}%").order(created_at: :desc)
       @categories = Category.all
       @like = Like.new
+      @all_ranks = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
+
+      @post_posts = Post.all.order(created_at: :desc)
+      @user = User.find(current_user.id)
+      like = @user.likes.last
+      post = like.post
+      category_recommend = Category.find_by(name: post.category.name)
+      post_recommend = category_recommend.posts
+      likes = Like.where(user_id: @user.id)
+      x = []
+      likes.each do |like|
+        x << like.post_id
+      end
+
+      @likes_recommend = post_recommend.where.not(id: x)
+      @random = Post.order("Random()").last
   end
 
   def show
@@ -34,6 +123,22 @@ class Users::PostsController < ApplicationController
       @comment = Comment.new
       @comments = @post.comments
       @categories = Category.all
+      @all_ranks = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
+
+      @post_posts = Post.all.order(created_at: :desc)
+      @user = User.find(current_user.id)
+      like = @user.likes.last
+      post = like.post
+      category_recommend = Category.find_by(name: post.category.name)
+      post_recommend = category_recommend.posts
+      likes = Like.where(user_id: @user.id)
+      x = []
+      likes.each do |like|
+        x << like.post_id
+      end
+
+      @likes_recommend = post_recommend.where.not(id: x)
+      @random = Post.order("Random()").last
   end
 
   def new

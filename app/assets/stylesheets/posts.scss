@@ -4,7 +4,7 @@
 
 .nav_search{
 	margin-top: 5px;
-	width: 760px;
+	width: 320px;
 	text-align: center;
 }
 
@@ -23,10 +23,6 @@
 
 #search_button_link a{
     text-decoration: none;
-}
-
-.nav_category{
-	padding: 10px;
 }
 
 .post_category_title{
@@ -49,7 +45,7 @@
   font-size: 25px;
   position: fixed;
   bottom: 10px;
-  right: 10px;
+  right: 25px;
   border-radius: 200px;
   border: 2px solid whitesmoke;
   display: inline-block;
@@ -65,7 +61,7 @@
     font-size: 25px;
     position: fixed;
     bottom: 10px;
-    right: 10px;
+    right: 25px;
     border-radius: 200px;
     background: #333;
     border: 1px #333;
@@ -154,6 +150,7 @@ img {
 	border: 2px solid whitesmoke;
 	height: 50px;
 	width: 279px;
+	overflow: hidden;
 }
 
 .post_index_url{
