@@ -4,7 +4,7 @@
 
 .nav_search{
 	margin-top: 5px;
-	width: 320px;
+	width: 600px;
 	text-align: center;
 }
 
@@ -200,6 +200,7 @@ img {
 
 .post_show_all{
 	margin-bottom: 20px;
+	margin-left: 100px;
 
 }
 .post_comment_index_all{
@@ -233,6 +234,11 @@ img {
 
 .post_comment_index_submit{
 	margin-top: 5px;
+}
+
+.post_edit_link{
+	margin-left: 50px;
+	margin-right: 5px;
 }
 
 #post_post_name{
