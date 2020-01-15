@@ -20,6 +20,7 @@
               <h3>Picking</h3>
             </div>
 
+          <% if user_signed_in? %>
             <div class="index_link_title">
               <div id="index_link_title">
                 <% if current_page?(controller: 'users/posts', action: 'index') %>
@@ -36,6 +37,14 @@
                       <button type="submit" class="search_button"  id="search_button_link"><i class="fas fa-search"></i></button>
               <% end %>
             </div>
+          <% else %>
+            <div class="nav_search_logout">
+              <%= form_tag(search_path,:method => 'get') do %>
+                      <%= text_field_tag :search, "",placeholder:"item name" %>
+                      <button type="submit" class="search_button"  id="search_button_link"><i class="fas fa-search"></i></button>
+              <% end %>
+            </div>
+          <% end %>
 
             <div class="nav_home_bar">
               <ul class="navbar-nav">
@@ -61,7 +70,7 @@
                     <%= link_to "Log in", new_user_session_path, class:"btn btn-default rounded-pill",style:  "color:black;" %>
                   </li>
                   <li class="nav-item">
-                    <%= link_to "Sign up", new_user_registration_path, method: :delete, class:"btn btn-default rounded-pill",style:  "color:black;" %>
+                    <%= link_to "Sign up", new_user_registration_path, class:"btn btn-default rounded-pill",style:  "color:black;" %>
                   </li>
                 <% end %>
               </ul>
@@ -74,82 +83,89 @@
 
     <%= yield %>
 
-    <div class="fixed_category">
-      <div class="category_title">
-        <h5>category</h5>
-      </div>
-        <% @categories.each do |cate| %>
-            <p><%= link_to cate.name, "/category/#{cate.id}" ,style:  "color:black;" %></p>
-        <% end %>
-    </div>
-
-    <div class="fixed_rank">
-      <div class="rank_title">
-        <h5>want ranking</h5>
-      </div>
-        <% @all_ranks.each.with_index(1) do |post, i| %>
-
-          <div class="rank_number"><%= i %></div>
-            <div class="rank_post_all">
-              <div class="rank_post_image">
-                <%= link_to users_post_path(post) do %>
-                  <%= attachment_image_tag post, :post_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "60x60" %>
-                <% end %>
-              </div><br>
-              <div id="rank_post_name">
-                <%= link_to users_post_path(post) do %>
-                  <%= post.post_name %>
-                <% end %>
-              </div>
-              <div class="post_index_url">
-                <div id="post_url_link">
-                  <a href= <%= post.url %>>shop</a>
-                </div>
-              </div>
-            </div>
-        <% end %>
-    </div>
-
-    <div class="fixed_recommend_post">
-      <h5>recommend item</h5>
-          <% if @likes_recommend.exists? %>
-           <div class="rank_post_all">
-              <div class="rank_post_image">
-                <%= link_to users_post_path(@post_posts) do %>
-                  <%= attachment_image_tag @likes_recommend.last, :post_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "60x60" %>
-                <% end %>
-              </div><br>
-              <div id="rank_post_name">
-                <%= link_to users_post_path(@post_posts) do %>
-                  <%= @likes_recommend.last.post_name %>
-                <% end %>
-              </div>
-              <div class="post_index_url">
-                <div id="post_url_link">
-                  <a href= <%= @likes_recommend.last.url %>>shop</a>
-                </div>
-              </div>
-            </div>
-          <% else %>
-           <%= @random.post_name %>
+      <div class="fixed_category">
+        <div class="category_title">
+          <h5>category</h5>
+        </div>
+          <% @categories.each do |cate| %>
+              <p><%= link_to cate.name, "/category/#{cate.id}" ,style:  "color:black;" %></p>
           <% end %>
-    </div>
+      </div>
 
-    <div class="modal fade " id="post-modal" tabshow="-1" role="dialog " aria-labelledby="exampleModalLabel" aria-hidden="true">
-       <div class="modal-dialog">
-          <div class="post_index_m modal-content">
+    <% if user_signed_in? %>
+
+      <div class="fixed_rank">
+        <div class="rank_title">
+          <h5>want ranking</h5>
+        </div>
+          <% @all_ranks.each.with_index(1) do |post, i| %>
+
+            <div class="rank_number"><%= i %></div>
+              <div class="rank_post_all">
+                <div class="rank_post_image">
+                  <%= link_to users_post_path(post) do %>
+                    <%= attachment_image_tag post, :post_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "60x60" %>
+                  <% end %>
+                </div><br>
+                <div id="rank_post_name">
+                  <%= link_to users_post_path(post) do %>
+                    <%= post.post_name %>
+                  <% end %>
+                </div>
+                <div class="post_index_url">
+                  <div id="post_url_link">
+                    <a href= <%= post.url %>>shop</a>
+                  </div>
+                </div>
+              </div>
+          <% end %>
+      </div>
+
+      <div class="fixed_recommend_post">
+        <h5>recommend item</h5>
+            <% unless @likes_recommend.nil? %>
+             <div class="rank_post_all">
+                <div class="rank_post_image">
+                  <%= link_to users_post_path(@post_posts) do %>
+                    <%= attachment_image_tag @likes_recommend.last, :post_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "60x60" %>
+                  <% end %>
+                </div><br>
+                <div id="rank_post_name">
+                  <%= link_to users_post_path(@post_posts) do %>
+                    <%= @likes_recommend.last.post_name %>
+                  <% end %>
+                </div>
+                <div class="post_index_url">
+                  <div id="post_url_link">
+                    <a href= <%= @likes_recommend.last.url %>>shop</a>
+                  </div>
+                </div>
+              </div>
+            <% else %>
+             <%= @random.post_name %>
+            <% end %>
+      </div>
+
+      <div id="post_link">
+          <div class="fixed_post">
+             <%= link_to 'Post', new_users_post_path, remote: true, class:"post_link" %>
           </div>
-       </div>
-    </div>
+      </div>
+
+      <div class="modal fade " id="post-modal" tabshow="-1" role="dialog " aria-labelledby="exampleModalLabel" aria-hidden="true">
+         <div class="modal-dialog">
+            <div class="post_index_m modal-content">
+            </div>
+         </div>
+      </div>
+
+    <% else %>
+
+    <% end %>
 
 
 
       <footer class="footer_bottom navbar navbar-dark bg-dark lg-10">
-          <div id="post_link">
-              <div class="fixed_post">
-                 <%= link_to 'Post', new_users_post_path, remote: true, class:"post_link" %>
-              </div>
-          </div>
           <p class="text-white">picking-inc</p>
       </footer>
 

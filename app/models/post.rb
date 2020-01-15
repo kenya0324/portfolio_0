@@ -7,6 +7,10 @@ class Post < ApplicationRecord
     has_many :comments, dependent: :destroy
     has_and_belongs_to_many :hashtags
 
+    def liked_by?(user)
+		likes.where(user_id: user.id).exists?
+	end
+
     after_create do
     post = Post.find_by(id: self.id)
     hashtags  = self.post_content.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
