@@ -1,5 +1,6 @@
 class Users::UsersController < ApplicationController
   def show
+      @posts = Post.all.order(created_at: :desc)
   	  @user = User.find(params[:id])
       @like = Like.new
       @categories = Category.all
@@ -7,8 +8,7 @@ class Users::UsersController < ApplicationController
 
     if current_user.likes.exists?
       @post_posts = Post.all.order(created_at: :desc)
-      @user = current_user
-      like = @user.likes.last
+      like = current_user.likes.last
 
       post = like.post
       category_recommend = Category.find_by(name: post.category.name)
@@ -51,16 +51,16 @@ class Users::UsersController < ApplicationController
   end
 
   def following
+      @posts = Post.all.order(created_at: :desc)
       @user  = User.find(params[:id])
       @users = @user.followings
       @categories = Category.all
       @all_ranks = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
-      render 'following'
 
     if current_user.likes.exists?
       @post_posts = Post.all.order(created_at: :desc)
       @user = current_user
-      like = @user.likes.last
+      like = current_user.likes.last
 
       post = like.post
       category_recommend = Category.find_by(name: post.category.name)
@@ -74,19 +74,20 @@ class Users::UsersController < ApplicationController
     else
       @random = Post.order("Random()").last
     end
+      render 'following'
   end
 
   def followers
+      @posts = Post.all.order(created_at: :desc)
       @user  = User.find(params[:id])
       @users = @user.followers
       @categories = Category.all
       @all_ranks = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
-      render 'follower'
 
     if current_user.likes.exists?
       @post_posts = Post.all.order(created_at: :desc)
       @user = current_user
-      like = @user.likes.last
+      like = current_user.likes.last
 
       post = like.post
       category_recommend = Category.find_by(name: post.category.name)
@@ -100,9 +101,11 @@ class Users::UsersController < ApplicationController
     else
       @random = Post.order("Random()").last
     end
+      render 'follower'
   end
 
   def want
+      @posts = Post.all.order(created_at: :desc)
       @user = User.find(params[:id])
       @like = Like.new
       @categories = Category.all
@@ -111,7 +114,7 @@ class Users::UsersController < ApplicationController
     if current_user.likes.exists?
       @post_posts = Post.all.order(created_at: :desc)
       @user = current_user
-      like = @user.likes.last
+      like = current_user.likes.last
 
       post = like.post
       category_recommend = Category.find_by(name: post.category.name)

@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root 'users/posts#index'
-  get '/users/posts/follow_index' => 'users/posts/follow_index', as:'follow_index'
-  get "/search" => "users/posts#search"
+  get '/about' => 'users/abouts#about', as:'about'
+  get '/users/posts/follow_index' => 'users/posts#follow_index', as:'follow_index'
+  get '/search' => 'users/posts#search'
   get '/post/hashtag/:name' => 'users/posts#hashtag'
   get '/category/:id' => 'users/posts#category'
   get '/want/:id' => 'users/users#want',   as: 'want'
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
     registrations: 'admins/registrations',
   }
   devise_for :users, controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks',
     sessions: 'users/sessions',
     passwords: 'users/passwords',
     registrations: 'users/registrations',

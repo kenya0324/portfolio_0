@@ -23,6 +23,7 @@ class Users::PostsController < ApplicationController
         @likes_recommend = post_recommend.where.not(id: x)
       else
         @random = Post.order("Random()").last
+        @posts = Post.all.order(created_at: :desc)
       end
     else
       @random = Post.order("Random()").last
@@ -58,6 +59,7 @@ class Users::PostsController < ApplicationController
   end
 
   def category
+      @posts = Post.all.order(created_at: :desc)
       @category = Category.find(params[:id])
       @post = Post.where(category_id:@category.id).order(created_at: :desc)
       @categories = Category.all
@@ -87,9 +89,10 @@ class Users::PostsController < ApplicationController
   end
 
   def hashtag
+      @posts = Post.all.order(created_at: :desc)
       @user = current_user
       @tag = Hashtag.find_by(hashname: params[:name])
-      @posts = @tag.posts.build
+      @post_tag = @tag.posts.build
       @post  = @tag.posts.page(params[:page]).order(created_at: :desc)
       @categories = Category.all
       @all_ranks = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
@@ -117,7 +120,8 @@ class Users::PostsController < ApplicationController
   end
 
   def search
-      @posts = Post.where('posts.post_name LIKE(?)', "%#{params[:search]}%").order(created_at: :desc)
+      @posts = Post.all.order(created_at: :desc)
+      @post_search = Post.where('posts.post_name LIKE(?)', "%#{params[:search]}%").order(created_at: :desc)
       @categories = Category.all
       @like = Like.new
       @all_ranks = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
@@ -145,6 +149,7 @@ class Users::PostsController < ApplicationController
   end
 
   def show
+      @posts = Post.all.order(created_at: :desc)
       @post = Post.find(params[:id])
       @user = User.find_by(id: @post.user_id)
       @comment = Comment.new
@@ -181,6 +186,12 @@ class Users::PostsController < ApplicationController
   def create
       @post = Post.new(post_params)
       @post.user_id = current_user.id
+      hashtags  = @post.post_content.scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
+      hashtags.uniq.map do |hashtag|
+        tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
+        tag.save
+        @post.hashtags << tag
+      end
       respond_to do |format|
        if @post.save!
          format.html { redirect_to @post }

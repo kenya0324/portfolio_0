@@ -78,4 +78,10 @@ gem 'data-confirm-modal'
 
 gem 'pry-byebug'
 
+gem 'omniauth'
 
+gem 'omniauth-google-oauth2'
+
+gem 'omniauth-facebook'
+
+gem 'dotenv-rails'

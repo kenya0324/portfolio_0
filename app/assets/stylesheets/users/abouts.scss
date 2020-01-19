@@ -1,0 +1,55 @@
+// Place all the styles related to the users::abouts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.about_title{
+	margin-top: 10px;
+	text-align: center;
+}
+
+.about_all{
+	height: 620px;
+	text-align: center;
+}
+
+.about_content_all{
+	background-color: rgba( 0, 0, 0, 0.5);
+	text-align: center;
+    padding-top: 105px;
+    height: 680px;
+}
+
+.about_intro{
+	font-size: 50px;
+	font-weight: bolder;
+	color: #fff;
+}
+
+.about_content{
+	font-size: 25px;
+	font-weight: bold;
+	color: #fff;
+}
+
+.about_image1{
+	background-size: cover;
+	background-image: url(image_path("photo-1563443766220-d8134149a844.jpeg"));
+    text-align: center;
+    height: 700px;
+}
+
+.about_post_all{
+	text-align: center;
+}
+
+.about_post_top_link{
+	margin-top: 100px;
+	text-align: center;
+}
+
+
+.about_post_top{
+	font-size: 40px;
+	text-align: center;
+}
