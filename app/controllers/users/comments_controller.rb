@@ -4,8 +4,12 @@ class Users::CommentsController < ApplicationController
         @comment = @post.comments.build(comment_params)
         @comment.user_id = current_user.id
         if @comment.save
-          render :index
-        end
+          # ここから
+          @post.create_notification_comment!(current_user, @comment.id)
+          # ここまで
+          respond_to :js
+        else
+          render 'posts/show'
     end
 
     def destroy

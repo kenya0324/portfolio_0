@@ -53,7 +53,7 @@
                     <%= link_to "Top", root_path, class:"nav_home_select",style:  "color:black;" %>
                   </li>
                   <li class="nav-item">
-                    <%= link_to "About", about_path, class:"nav_home_select",style:  "color:black;" %>
+                    <%= link_to "通知", users_notifications_path, class:"nav_home_select",style:  "color:black;" %>
                   </li>
                   <li class="nav-item">
                     <%= link_to "My Page", users_user_path(current_user.id), class:"nav_home_select",style:  "color:black;" %>
@@ -65,6 +65,9 @@
                 <% else %>
                   <li class="nav-item">
                     <%= link_to "Home", root_path, class:"btn btn-default rounded-pill",style:  "color:black;" %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to "About", about_path, class:"nav_home_select",style:  "color:black;" %>
                   </li>
                   <li class="nav-item">
                     <%= link_to "Log in", new_user_session_path, class:"btn btn-default rounded-pill",style:  "color:black;" %>
@@ -123,7 +126,7 @@
 
       <div class="fixed_recommend_post">
         <h5>recommend item</h5>
-            <% unless @likes_recommend.nil? %>
+            <% unless @likes_recommend.blank? %>
              <div class="rank_post_all">
                 <div class="rank_post_image">
                   <%= link_to users_post_path(@likes_recommend.last.id) do %>
