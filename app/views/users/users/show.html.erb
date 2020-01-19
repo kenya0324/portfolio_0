@@ -31,6 +31,7 @@
                	 <%= render 'users/users/follow_form', user: @user %>
                	 <%= link_to 'want list', want_path(@user),class:"btn-sm btn-light " %>
 			     <%= link_to '編集', edit_users_user_path(@user), remote: true, class:"btn-sm btn-light " %>
+			     <%= link_to '退会', users_user_path(@user),method: :delete, data:{ confirm: '本当に退会しますか?',cancel: 'キャンセル', commit: '退会する'}, title: '退会確認', class:"btn-sm btn-light "%>
                </div>
 
 			<div class="modal fade" id="user-modal" tabshow="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -44,13 +45,9 @@
         <div class="row">
           <div id="post-all">
 
-        	<% @user.posts.each do |post| %>
+        	<% @user.posts.reverse_each do |post| %>
 
         	<div class="post">
-		    	      <div class="post_index_user_name_image">
-			    	    <%= attachment_image_tag post.user, :user_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "50x50" %>
-				        <%= link_to "#{post.user.name}" , users_user_path(post.user_id) %>
-				      </div>
 				      <div class="post_index_post_image">
 					    <%= attachment_image_tag post, :post_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "300x300" %>
 					  </div>

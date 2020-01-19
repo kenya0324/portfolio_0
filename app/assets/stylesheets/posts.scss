@@ -78,6 +78,7 @@ img {
 
 #post-all{
 	margin-left: 45px;
+	margin-bottom: 20px;
 }
 
 .post_index_show{
@@ -234,6 +235,21 @@ img {
 
 .post_comment_index_submit{
 	margin-top: 5px;
+}
+
+.comment_more{
+	width: 50px;
+	text-align: center;
+	margin-top: 5px;
+	margin-left: 550px;
+	border-radius: 10px;
+}
+
+.comment_more:hover{
+	width: 50px;
+	text-align: center;
+	margin-left: 550px;
+	background: whitesmoke;
 }
 
 .post_edit_link{

@@ -50,10 +50,10 @@
               <ul class="navbar-nav">
                 <% if user_signed_in? %>
                   <li class="nav-item">
-                    <%= link_to "Home", root_path, class:"nav_home_select",style:  "color:black;" %>
+                    <%= link_to "Top", root_path, class:"nav_home_select",style:  "color:black;" %>
                   </li>
                   <li class="nav-item">
-                    <%= link_to "About", root_path, class:"nav_home_select",style:  "color:black;" %>
+                    <%= link_to "About", about_path, class:"nav_home_select",style:  "color:black;" %>
                   </li>
                   <li class="nav-item">
                     <%= link_to "My Page", users_user_path(current_user.id), class:"nav_home_select",style:  "color:black;" %>
@@ -126,12 +126,12 @@
             <% unless @likes_recommend.nil? %>
              <div class="rank_post_all">
                 <div class="rank_post_image">
-                  <%= link_to users_post_path(@post_posts) do %>
+                  <%= link_to users_post_path(@likes_recommend.last.id) do %>
                     <%= attachment_image_tag @likes_recommend.last, :post_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "60x60" %>
                   <% end %>
                 </div><br>
                 <div id="rank_post_name">
-                  <%= link_to users_post_path(@post_posts) do %>
+                  <%= link_to users_post_path(@likes_recommend.last.id) do %>
                     <%= @likes_recommend.last.post_name %>
                   <% end %>
                 </div>
@@ -142,15 +142,35 @@
                 </div>
               </div>
             <% else %>
-             <%= @random.post_name %>
+             <div class="rank_post_all">
+                <div class="rank_post_image">
+                  <%= link_to users_post_path(@posts) do %>
+                    <%= attachment_image_tag @random, :post_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "60x60" %>
+                  <% end %>
+                </div><br>
+                <div id="rank_post_name">
+                  <%= link_to users_post_path(@posts) do %>
+                    <%= @random.post_name %>
+                  <% end %>
+                </div>
+                <div class="post_index_url">
+                  <div id="post_url_link">
+                    <a href= <%= @random.url %>>shop</a>
+                  </div>
+                </div>
+              </div>
             <% end %>
       </div>
 
-      <div id="post_link">
+
+      <footer class="footer_bottom">
+        <div id="post_link">
           <div class="fixed_post">
              <%= link_to 'Post', new_users_post_path, remote: true, class:"post_link" %>
           </div>
-      </div>
+        </div>
+          <p class="text-white">picking-inc</p>
+      </footer>
 
       <div class="modal fade " id="post-modal" tabshow="-1" role="dialog " aria-labelledby="exampleModalLabel" aria-hidden="true">
          <div class="modal-dialog">
@@ -162,12 +182,6 @@
     <% else %>
 
     <% end %>
-
-
-
-      <footer class="footer_bottom navbar navbar-dark bg-dark lg-10">
-          <p class="text-white">picking-inc</p>
-      </footer>
 
    </div>
 

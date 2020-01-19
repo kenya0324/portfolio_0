@@ -3,4 +3,4 @@
     alert('error!');
 <% end %>
 $("#post-modal").modal("hide");
-$("#post-all").append("<%= escape_javascript(render 'post_create', post: @post) %>")
+$("#post-all").prepend("<%= escape_javascript(render 'post_create', post: @post) %>")
