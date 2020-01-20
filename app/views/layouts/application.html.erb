@@ -8,6 +8,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
   </head>
 
   <body>
@@ -56,7 +57,7 @@
                     <%= link_to "通知", users_notifications_path, class:"nav_home_select",style:  "color:black;" %>
                   </li>
                   <li class="nav-item">
-                    <%= link_to "My Page", users_user_path(current_user.id), class:"nav_home_select",style:  "color:black;" %>
+                    <%= link_to "マイページ", users_user_path(current_user.id), class:"nav_home_select",style:  "color:black;" %>
                   </li>
                   <li class="nav-item">
                     <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"nav_home_select",style:  "color:black;" %>

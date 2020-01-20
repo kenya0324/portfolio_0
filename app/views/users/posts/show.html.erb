@@ -1,74 +1,63 @@
 <div class="container clearfix">
     <div class="post_show_all">
         <div class="row">
-          	  <div id="post_update">
+          	<div id="post_update">
 	            <div class="post">
-			    	      <div class="post_index_user_name_image">
-				    	    <%= attachment_image_tag @post.user, :user_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "50x50" %>
-					        <%= link_to "#{@post.user.name}" , users_user_path(@post.user_id) %>
-					        <%= link_to '編集', edit_users_post_path(@post), remote: true, class:"post_edit_link" ,style:  "color:black;" %>
-					        <%= link_to '削除', users_post_path(@post),method: :delete, data:{ confirm: '本当に削除して良いですか?',cancel: 'やめる', commit: '削除する'}, title: '削除確認',style:  "color:black;" %>
-					      </div>
-					      <div class="post_index_post_image">
-						    <%= attachment_image_tag @post, :post_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "300x300" %>
-						  </div>
+	    	        <div class="post_index_user_name_image">
+		    	        <%= attachment_image_tag @post.user, :user_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "50x50" %>
+			            <%= link_to "#{@post.user.name}" , users_user_path(@post.user_id) %>
+			            <%= link_to '編集', edit_users_post_path(@post), remote: true, class:"post_edit_link" ,style:  "color:black;" %>
+			            <%= link_to '削除', users_post_path(@post),method: :delete, data:{ confirm: '本当に削除して良いですか?',cancel: 'やめる', commit: '削除する'}, title: '削除確認',style:  "color:black;" %>
+			        </div>
+			        <div class="post_index_post_image">
+				        <%= attachment_image_tag @post, :post_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "300x300" %>
+				    </div>
 					<div class="row">
-					   <div class="col-6">
-						  <div class="post_index_iine">
-							<%= render 'posts', post: @post %>
-						  </div>
-					   </div>
-					   <div class="col-6">
-						  <div class="post_index_post_category">
-						  	<div id="post_index_category_link">
-						  	 <%= link_to "/category/#{@post.category.id}" do  %>
-							 <%= @post.category.name %>
-							 <% end %>
-							</div>
-						  </div>
-					   </div>
-					</div>
-						  <div class="post_index_post_name">
-						     <%= truncate(@post.post_name, length: 10) %>
-						  </div>
-						  <div class="post_index_content">
-						  	 <%= render_with_hashtags(@post.post_content) %>
-						  </div>
-				    <div class="row">
-				       <div class="col-6">
-				       	  <div class="post_index_url">
-				       	  	<div id="post_url_link">
-						      <a href= <%= @post.url %>>shop</a>
+					    <div class="col-6">
+						    <div class="post_index_iine">
+							    <%= render 'users/likes/like', post: @post %>
 						    </div>
-						  </div>
-					   </div>
-					   <div class="col-6">
-
-					   </div>
+					    </div>
+					    <div class="col-6">
+						    <div class="post_index_post_category">
+						  	    <div id="post_index_category_link">
+								  	<%= link_to "/category/#{@post.category.id}" do  %>
+									<%= @post.category.name %>
+									<% end %>
+							    </div>
+						    </div>
+					    </div>
+					</div>
+					<div class="post_index_post_name">
+						<%= truncate(@post.post_name, length: 10) %>
+				    </div>
+					<div class="post_index_content">
+						<%= render_with_hashtags(@post.post_content) %>
+				    </div>
+				    <div class="row">
+				        <div class="col-6">
+				       	    <div class="post_index_url">
+				       	  	    <div id="post_url_link">
+						            <a href= <%= @post.url %>>shop</a>
+						        </div>
+						    </div>
+					    </div>
 				    </div>
 			    </div>
-			  </div>
+			</div>
 
 		    <div class="post_comment_index_all">
-		      <div class="post_comment_index_title">
-			    <h4>comment</h4>
-			  </div>
+		        <div class="post_comment_index_title">
+			        <h4>comment</h4>
+			    </div>
 			    <div id="comments_area">
-			      <%= render 'users/comments/index', comments: @comments %>
+			        <%= render 'users/comments/index', comments: @comments %>
 			    </div>
 			    <% if user_signed_in? %>
-			      <%= render 'users/comments/comment_form', comment: @comment, post: @post %>
+			        <%= render 'users/comments/comment_form', comment: @comment, post: @post %>
 			    <% end %>
 			</div>
 
         </div>
     </div>
-
-    <div class="modal fade " id="post-modal" tabshow="-1" role="dialog " aria-labelledby="exampleModalLabel" aria-hidden="true">
-	   <div class="modal-dialog">
-	   	  <div class="post_index_m modal-content">
-	   	  </div>
-	   </div>
-	</div>
-
 </div>

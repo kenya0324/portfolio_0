@@ -5,12 +5,14 @@ class Users::LikesController < ApplicationController
       like = current_user.likes.new(post_id: @post.id)
       like.save
       @post = Post.find(params[:post_id])
-      @post.create_notification_by(current_user)
+      @post.create_notification_like(current_user)
+      render :like
   end
 
   def unlike
       like = current_user.likes.find_by(post_id: @post.id)
       like.destroy
+      render :unlike
   end
 
   private
