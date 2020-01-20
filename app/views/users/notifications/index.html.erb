@@ -1,10 +1,12 @@
-<div>
-  <h4 class="sub-title">通知</h4>
-  <% if @notifications.exists? %>
-    <div class="users-index">
-      <%= render @notifications %>
-    </div>
-  <% else %>
-    <p>通知はありません</p>
-  <% end %>
+<div class="container clearfix">
+		<div class=notification_all>
+		  <h4 class="sub-title">通知</h4>
+		  <% if @notifications.exists? %>
+		    <div class="users-index">
+		      <%= render @notifications %>
+		    </div>
+		  <% else %>
+		    <p>通知はありません</p>
+		  <% end %>
+		</div>
 </div>

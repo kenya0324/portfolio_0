@@ -21,6 +21,10 @@ class Users::PostsController < ApplicationController
           x << like.post_id
         end
         @likes_recommend = post_recommend.where.not(id: x)
+        if @likes_recommend.blank?
+          @random = Post.order("Random()").last
+         @posts = Post.all.order(created_at: :desc)
+        end
       else
         @random = Post.order("Random()").last
         @posts = Post.all.order(created_at: :desc)
