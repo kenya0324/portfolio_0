@@ -26,12 +26,12 @@ class Post < ApplicationRecord
 
   def create_notification_comment(current_user, comment_id)
     # 自分以外にコメントしている人をすべて取得し、全員に通知を送る
-    comment_user_ids = Comment.select(:user_id).where(post_id: id).where.not(user_id: current_user.id).distinct
-    comment_user_ids.each do |comment_user_id|
-      save_notification_comment(current_user, comment_id, comment_user_id['user_id'])
+    temp_ids = Comment.select(:user_id).where(post_id: id).where.not(user_id: current_user.id).distinct
+    temp_ids.each do |temp_id|
+      save_notification_comment(current_user, comment_id, temp_id['user_id'])
     end
     # まだ誰もコメントしていない場合は、投稿者に通知を送る
-    save_notification_comment(current_user, comment_id, user_id) if comment_user_id.blank?
+    save_notification_comment(current_user, comment_id, user_id) if temp_ids.blank?
   end
 
   def save_notification_comment(current_user, comment_id, visited_id)
@@ -41,6 +41,7 @@ class Post < ApplicationRecord
       visited_id: visited_id,
       action: 'comment'
     )
+    notification.save if notification.valid?
   end
 
 end

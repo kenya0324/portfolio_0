@@ -4,16 +4,17 @@
 
 	    <table class="following_user_all">
 		    <th class="following_user_image">
-		        <%= attachment_image_tag user, :user_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "100x100" %>
+		    	<%= link_to users_user_path(user) do %>
+		            <%= attachment_image_tag user, :user_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "100x100" %>
+		        <% end %>
 		    </th>
 		    <th class="following_user_name">
-		        <%= user.name %>
+		    	<%= link_to users_user_path(user) do %>
+		            <%= user.name %>
+		        <% end %>
 		    </th>
 		    <th class="following_user_follow_form">
 		        <%= render 'users/users/follow_form', user: user %>
-		    </th>
-		    <th class="following_user_show">
-		        <%= link_to 'User Page', users_user_path(user) , class:"btn-sm btn-light "%>
 		    </th>
 	    </table>
 

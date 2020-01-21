@@ -19,10 +19,17 @@
 //= require bootstrap-sprockets
 //= require data-confirm-modal
 
+$(document).on("turbolinks:load", function() {
+  $('.menu-trigger').on('click', function() {
+    $(this).toggleClass('active');
+    $('#sp-menu').fadeToggle();
+    return false;
+  });
+ });
 
 
-$(document).ready(function(){
-  $('textarea').autosize();
-});
+// $(document).ready(function(){
+//   $('textarea').autosize();
+// });
 
 

@@ -264,6 +264,7 @@ class Users::PostsController < ApplicationController
       redirect_to users_user_path(@user)
   end
 
+
  private
   def post_params
       params.require(:post).permit(:user_id, :category_id, :hashtag_id, :post_image, :post_content, :post_name, :url ,:content)

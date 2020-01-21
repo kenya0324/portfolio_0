@@ -18,8 +18,45 @@
         <div class="container-fluid clearfix">
 
             <div class="nav_title_name">
-              <h3>Picking</h3>
+                <h3>Picking</h3>
             </div>
+
+            <div id="sp-menu" class="sp">
+                <h4>category</h4>
+                <div class=category_responsive>
+                   <% @categories.each do |cate| %>
+                      <p><%= link_to cate.name, "/category/#{cate.id}" ,style:  "color:white;" %></p>
+                   <% end %>
+                </div>
+            </div>
+
+            <div id="hm-icon" class="sp menu-trigger">
+                 <span></span>
+                 <span></span>
+                 <span></span>
+            </div>
+
+          <% if user_signed_in? %>
+              <div class="nav_logout_responsive">
+                  <%= link_to destroy_user_session_path, method: :delete, style:  "color:black;" do %>
+                     <i class="fas fa-sign-out-alt fa-lg"></i>
+                  <% end %>
+              </div>
+          <% else %>
+              <div class="nav_logout_responsive">
+                  <%= link_to new_user_session_path, style:  "color:black;" do %>
+                     <i class="fas fa-sign-in-alt fa-lg"></i>
+                  <% end %>
+              </div>
+              <div class="nav_signup_responsive">
+                  <%= link_to new_user_registration_path,style:  "color:black;" do %>
+                     <i class="fas fa-user-plus"></i>
+                  <% end %>
+              </div>
+              <div class="user_notlogin_about">
+                  <%= link_to "About", about_path, class:"nav_home_select",style:  "color:black;" %>
+              </div>
+          <% end %>
 
           <% if user_signed_in? %>
             <div class="index_link_title">
@@ -51,16 +88,27 @@
               <ul class="navbar-nav">
                 <% if user_signed_in? %>
                   <li class="nav-item">
-                    <%= link_to "Top", root_path, class:"nav_home_select",style:  "color:black;" %>
+                    <%= link_to root_path, class:"btn btn-default rounded-pill",style:  "color:black;" do %>
+                       <i class="fas fa-home fa-lg fa-home-color"></i>
+                    <% end %>
                   </li>
                   <li class="nav-item">
-                    <%= link_to "通知", users_notifications_path, class:"nav_home_select",style:  "color:black;" %>
+                    <%= link_to users_notifications_path, class:"btn btn-default rounded-pill",style:  "color:black;" do %>
+                       <i class="fas fa-dot-circle fa-lg fa-bookmark-color"></i>
+                    <% end %>
+                    <% if unchecked_notifications.any? %>
+                        <i class="fa fa-circle notification-circle"></i>
+                    <% end %>
                   </li>
                   <li class="nav-item">
-                    <%= link_to "マイページ", users_user_path(current_user.id), class:"nav_home_select",style:  "color:black;" %>
+                    <%= link_to users_user_path(current_user.id), class:"btn btn-default rounded-pill",style:  "color:black;" do %>
+                       <i class="fas fa-user fa-lg fa-user-color"></i>
+                    <% end %>
                   </li>
                   <li class="nav-item">
-                    <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"nav_home_select",style:  "color:black;" %>
+                    <%= link_to destroy_user_session_path, method: :delete, class:"btn btn-default rounded-pill", style:  "color:black;" do %>
+                       <i class="fas fa-sign-out-alt fa-lg"></i>
+                    <% end %>
                   </li>
 
                 <% else %>
@@ -68,7 +116,7 @@
                     <%= link_to "Home", root_path, class:"btn btn-default rounded-pill",style:  "color:black;" %>
                   </li>
                   <li class="nav-item">
-                    <%= link_to "About", about_path, class:"nav_home_select",style:  "color:black;" %>
+                    <%= link_to "About", about_path, class:"btn btn-default rounded-pill",style:  "color:black;" %>
                   </li>
                   <li class="nav-item">
                     <%= link_to "Log in", new_user_session_path, class:"btn btn-default rounded-pill",style:  "color:black;" %>
@@ -174,6 +222,21 @@
           </div>
         </div>
           <p class="text-white">picking-inc</p>
+          <%= link_to root_path, class:"footer_top_button",style:  "color:black;" do %>
+             <i class="fas fa-home fa-lg fa-home-color"></i>
+          <% end %>
+          <%= link_to follow_index_path, class:"footer_timeline_button",style:  "color:black;" do %>
+             <i class="fas fa-users fa-lg fa-users-color"></i>
+          <% end %>
+          <%= link_to users_user_path(current_user.id), class:"footer_mypage_button",style:  "color:black;" do %>
+             <i class="fas fa-user fa-lg fa-user-color"></i>
+          <% end %>
+          <%= link_to users_notifications_path, class:"footer_notification_button",style:  "color:black;" do %>
+             <i class="fas fa-dot-circle fa-lg fa-bookmark-color"></i>
+          <% end %>
+          <% if unchecked_notifications.any? %>
+              <i class="fa fa-circle notification-circle"></i>
+          <% end %>
       </footer>
 
       <div class="modal fade " id="post-modal" tabshow="-1" role="dialog " aria-labelledby="exampleModalLabel" aria-hidden="true">

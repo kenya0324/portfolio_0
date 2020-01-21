@@ -11,6 +11,10 @@
 	margin-left: 340px;
 }
 
+.user_show_option_responsive{
+	display: none;
+}
+
 .user_show_image{
 	margin-bottom: 20px;
 	float: left;
@@ -58,4 +62,114 @@
 
 .user_want_title{
 	margin-left: 50px;
+}
+
+@media screen and (max-width:375px){
+
+/*-------user_show-------------------------------*/
+
+.user_show_title{
+	margin-left: 0px;
+}
+
+.user_show_info{
+	width: 100%;
+	margin-top: 45px;
+	margin-left: 20px;
+}
+
+.user_show_option_responsive{
+	display: block;
+	margin-left: 100px;
+}
+
+.user_show_option{
+	display: none;
+}
+
+.user_show_image{
+	margin-left: 10px;
+	margin-bottom: 20px;
+	float: left;
+	border-radius: 40px;
+	width: 100px;
+}
+
+.user_show_user_name{
+	margin-left: 120px;
+	margin-bottom: 10px;
+	border-bottom: 2px solid whitesmoke;
+	width: 200px;
+}
+
+.user_show_user_email{
+	margin-left: 120px;
+	margin-bottom: 20px;
+	border-bottom: 2px solid whitesmoke;
+	width: 200px;
+}
+
+.user_show_user_introduction{
+	margin-left: 120px;
+	border-bottom: 2px solid whitesmoke;
+	width: 200px;
+}
+
+.user_show_follow{
+	margin-top: 10px;
+	margin-left: 0px;
+}
+
+.stats{
+	width: 100%;
+	margin-left: 120px;
+}
+
+
+#edit_user_2{
+	float: left;
+}
+.user_show_m{
+	width: 300px;
+    height: 550px;
+}
+
+.user_want_title{
+	margin-left: 30px;
+}
+
+/*-------user_following-------------------------------*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

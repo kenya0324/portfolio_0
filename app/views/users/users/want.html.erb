@@ -1,9 +1,10 @@
 <div class="container clearfix">
-    <div class="user_want_title">
-        <h4>want list</h4>
-    </div>
 	<div class="row">
 	    <div id="post-all">
+	    	<div class="user_want_title">
+		        <h4>Want list</h4>
+		    </div>
+
 		    <% @user.liked_posts.each do |post| %>
 
 			    <div class="post">
