@@ -5,3 +5,22 @@
 .notification_all{
 	margin-left: 270px;
 }
+
+.notification_comment{
+	margin-left: 55px;
+}
+
+@media screen and (max-width:375px){
+
+.notification_all{
+	margin-top: 70px;
+	margin-left: 0px;
+	margin-bottom: 100px;
+}
+
+.notification_comment{
+	margin-left: 0px;
+}
+
+
+}

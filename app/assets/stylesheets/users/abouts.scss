@@ -49,7 +49,104 @@
 }
 
 
-.about_post_top{
-	font-size: 40px;
+.about_post_start{
+	font-size: 30px;
 	text-align: center;
+	font-weight: bolder;
+	padding: 18px;
+	border-radius: 200px;
+    border: 2px dodgerblue;
+    background: #1E90FF;
+}
+
+.about_post_start :hover{
+    background: deepskyblue;
+}
+
+.about_footer_bottom{
+    height: 50px;
+	background: #333;
+}
+
+#wrapper{
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+@media screen and (max-width:375px){
+
+.about_title{
+	text-align: center;
+	position: fixed;
+	top: -10px;
+    left: 0px;
+	width: 100%;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	background: #fff;
+	z-index: 20;
+}
+
+.about_all{
+	height: 762px;
+	text-align: center;
+}
+
+.about_content_all{
+	background-color: rgba( 0, 0, 0, 0.5);
+	text-align: center;
+    padding-top: 105px;
+    height: 762px;
+}
+
+.about_intro{
+	font-size: 33px;
+	font-weight: bolder;
+	color: #fff;
+}
+
+.about_content{
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+}
+
+.about_image1{
+	background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+	background-image: url(image_path("photo-1563443766220-d8134149a844.jpeg"));
+    text-align: center;
+    height: 812px;
+}
+
+.about_post_start{
+	font-size: 30px;
+	text-align: center;
+	font-weight: bolder;
+	padding: 18px;
+	border-radius: 200px;
+    border: 2px dodgerblue;
+    background: #1E90FF;
+}
+
+.about_footer_bottom{
+	height: 50px;
+	background: #333;
+}
+
+#wrapper{
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+
+
+
+
+
+
+
 }

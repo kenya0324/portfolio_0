@@ -33,12 +33,73 @@
     color: black;
 }
 
+/* ---------------------------- */
+/* --- post_index --- */
+/* ---------------------------- */
 
+.post_index_wantranking_title{
+    display: none;
+}
+
+/* 投稿したものの位置と枠線を指定しています */
 .post{
 	float: left;
 	border: 2px solid whitesmoke;
 	margin: 10px;
 	padding: 3px;
+}
+
+/* 投稿したuserのプロフィール画像の位置を指定しています */
+.post_index_user_name_image{
+	margin-top: 5px;
+	margin-left: 20px;
+	height: 50px;
+	display: block;
+}
+
+/* 投稿した画像の位置を指定しています */
+.post_index_post_image{
+	display: block;
+}
+
+/* wantボタンの位置と高さを指定しています */
+.post_index_iine{
+	margin-left: 20px;
+	height: 40px;
+}
+
+/* wantボタンのサイズと色を指定しています */
+.iine__button{
+	margin-left: 10px;
+	font-size: 20px;
+	color: #333;
+}
+
+/* wantボタンのhover時の色を指定しています */
+.iine__button :hover{
+	color: dimgray;
+}
+
+/* 投稿のcategoryのリンクの縦幅と枠線、位置を指定しています */
+.post_index_post_category{
+	height: 30px;
+	width: 95px;
+	margin-left: 29px;
+	text-align: center;
+	border-radius: 10px;
+	border: 2px solid whitesmoke;
+}
+
+/* 投稿のcategoryのリンクのhover時の色を指定しています */
+.post_index_post_category :hover{
+	background: #333;
+	border-radius: 10px;
+}
+
+/* 投稿のcategoryのリンクの文字色とリンクの下線を指定しています */
+#post_index_category_link a{
+    text-decoration: none;
+    color: black;
 }
 
 .fixed_post{
@@ -86,54 +147,6 @@ img {
 	margin-right: 20px;
 	margin-bottom: 5px;
 }
-
-.post_index_user_name_image{
-	margin-top: 5px;
-	margin-left: 20px;
-	height: 50px;
-	display: block;
-}
-
-.post_index_post_image{
-	display: block;
-}
-
-
-.post_index_iine{
-	margin-left: 20px;
-	height: 40px;
-}
-
-.iine__button{
-	margin-left: 10px;
-	font-size: 20px;
-	color: #333;
-}
-
-.iine__button :hover{
-	color: dimgray;
-}
-
-
-.post_index_post_category{
-	height: 30px;
-	width: 95px;
-	margin-left: 29px;
-	text-align: center;
-	border-radius: 10px;
-	border: 2px solid whitesmoke;
-}
-
-.post_index_post_category :hover{
-	background: #333;
-	border-radius: 10px;
-}
-
-#post_index_category_link a{
-    text-decoration: none;
-    color: black;
-}
-
 
 .post_index_post_name{
 	margin-left: 20px;
@@ -270,5 +283,116 @@ img {
 	height: 60px;
 }
 
+/*-------iphonex------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width:375px){
+
+/*-------post_index-------------------------------*/
+
+.post_index_wantranking_title{
+    display: block;
+    margin-left: 20px;
+}
+
+#post-all{
+	margin-top: 75px;
+	margin-left: 12.5px;
+	margin-bottom: 100px;
+}
+
+/*-------post_show-------------------------------*/
+
+.post_show_all{
+	margin-top: 75px;
+	margin-left: 12px;
+	margin-bottom: 80px;
+}
+
+.post_comment_index_all{
+	margin-top: 15px;
+	width: 93.5vw;
+}
+
+.post_comment_index_title{
+	margin-left: 5px;
+}
+
+.post_comment_index_top{
+	margin-bottom: 20px;
+}
+
+.post_comment_index{
+    border: 2px solid whitesmoke;
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.post_comment_index_content{
+	border-bottom: 2px solid whitesmoke;
+	width: 100%;
+}
+
+.post_comment_index_delete{
+	margin-top: 12px;
+	margin-left: 0px;
+}
+
+#comments_area{
+	width: 100%;
+}
+
+.comment_more{
+	width: 100%;
+	text-align: center;
+	margin-top: 5px;
+	margin-left: 0px;
+	border-radius: 10px;
+}
+
+.comment_more:hover{
+	width: 100%;
+	text-align: center;
+	margin-left: 0px;
+	background: whitesmoke;
+}
+
+.post_edit_link{
+	margin-left: 50px;
+	margin-right: 5px;
+}
+
+#post_post_name{
+	height: 40px;
+}
 
 
+#post_url{
+	height: 40px;
+}
+
+#comment_content{
+	height: 60px;
+}
+
+#post-modal {
+	width: 100vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
