@@ -1,11 +1,14 @@
 <div class="container clearfix">
-		<div class=notification_all>
-		  <% if @notifications.exists? %>
-		    <div class="users-index">
-		      <%= render @notifications %>
-		    </div>
-		  <% else %>
-		    <p>通知はありません</p>
-		  <% end %>
-		</div>
+	<div class=notification_all>
+	    <% if @notifications.exists? %>
+	        <div class="users-index">
+	        	<%= link_to destroy_all_users_notifications_path, method: :delete ,class:"notification_trash", style:  "color:black;" do %>
+				   <i class="fas fa-trash-alt fa-lg"></i>
+				<% end %>
+	            <%= render @notifications %>
+	        </div>
+	    <% else %>
+	        <p>通知はありません</p>
+	    <% end %>
+	</div>
 </div>

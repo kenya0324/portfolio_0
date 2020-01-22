@@ -19,6 +19,7 @@
 //= require bootstrap-sprockets
 //= require data-confirm-modal
 
+/* レスポンシブ時のハンバーガーメニューの動きを指示しています */
 $(document).on("turbolinks:load", function() {
   $('.menu-trigger').on('click', function() {
     $(this).toggleClass('active');
@@ -27,9 +28,18 @@ $(document).on("turbolinks:load", function() {
   });
  });
 
-
-// $(document).ready(function(){
-//   $('textarea').autosize();
-// });
-
-
+$(“#page_top”).hide();
+  $(window).scroll(function(){
+    $(‘#pos’).text($(this).scrollTop());
+    if ($(this).scrollTop() > 60){
+      $(“#back-to-top”).fadeIn();
+    }else{
+      $(‘#back-to-top’).fadeOut();
+    }
+  });
+  $(‘#page_top a’).click(function() {
+      $(‘html, body’).animate({
+          scrollTop:0
+      }, 800);
+      return false;
+  });

@@ -10,10 +10,28 @@
 	margin-left: 55px;
 }
 
+.notification_paginate{
+	position: fixed;
+	left: 600px;
+	bottom: 70px;
+}
+
+.notification_trash{
+	margin-top: 10px;
+	margin-left: 550px;
+
+}
+
+.notification-circle{
+	color: springgreen;
+	position: fixed;
+	right: 65px;
+}
+
 @media screen and (max-width:375px){
 
 .notification_all{
-	margin-top: 70px;
+	margin-top: 100px;
 	margin-left: 0px;
 	margin-bottom: 100px;
 }
@@ -22,5 +40,16 @@
 	margin-left: 0px;
 }
 
+.notification_trash{
+	margin-top: 10px;
+    margin-left: 300px;
+}
+
+.notification-circle{
+	color: springgreen;
+	position: fixed;
+	bottom: 35px;
+	right: 17px;
+}
 
 }

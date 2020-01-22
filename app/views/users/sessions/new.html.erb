@@ -27,7 +27,20 @@
           </div>
         <% end %>
 
-        <%= render "users/shared/links" %>
+          <div class="new_user_password">
+            <%= link_to new_user_password_path do %>
+               <p>Forgot your password?</p>
+            <% end %>
+          </div>
+
+          <div class="sns_login">
+            <%= link_to user_facebook_omniauth_authorize_path, class:"btn bg-primary facebook_log_boot" ,style:  "color:white;" do %>
+               <i class="fab fa-facebook-square facebook_log"></i> Facebookアカウントでログイン
+            <% end %><br>
+            <%= link_to user_google_oauth2_omniauth_authorize_path, class:"btn bg-danger google_log_boot",style:  "color:white;"   do %>
+               <i class="fab fa-google google_log"></i> Googleアカウントでログイン
+            <% end %>
+          </div>
 
     </div>
 </div>

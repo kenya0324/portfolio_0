@@ -6,8 +6,8 @@
 	    	        <div class="post_index_user_name_image">
 		    	        <%= attachment_image_tag @post.user, :user_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "50x50" %>
 			            <%= link_to "#{@post.user.name}" , users_user_path(@post.user_id) %>
-			            <%= link_to '編集', edit_users_post_path(@post), remote: true, class:"post_edit_link" ,style:  "color:black;" %>
-			            <%= link_to '削除', users_post_path(@post),method: :delete, data:{ confirm: '本当に削除して良いですか?',cancel: 'やめる', commit: '削除する'}, title: '削除確認',style:  "color:black;" %>
+			            <%= link_to '編集', edit_users_post_path(@post), remote: true, class:"btn-sm btn-light post_edit_link" ,style:  "color:black;" %>
+			            <%= link_to '削除', users_post_path(@post),method: :delete, data:{ confirm: '本当に削除して良いですか?',cancel: 'やめる', commit: '削除する'}, title: '削除確認',style:  "color:black;" , class:"btn-sm btn-light"%>
 			        </div>
 			        <div class="post_index_post_image">
 				        <%= attachment_image_tag @post, :post_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "300x300" %>
@@ -28,13 +28,13 @@
 						    </div>
 					    </div>
 					</div>
-					<div class="post_index_post_name">
-						<%= truncate(@post.post_name, length: 10) %>
+					<div class="post_show_post_name">
+						<%= @post.post_name %>
 				    </div>
-					<div class="post_index_content">
-						<%= render_with_hashtags(@post.post_content) %>
+					<div class="post_show_content">
+						<%= simple_format (render_with_hashtags(@post.post_content)) %>
 				    </div>
-				    <div class="row">
+				    <div class="row post_index_bottom_link">
 				        <div class="col-6">
 				       	    <div class="post_index_url">
 				       	  	    <div id="post_url_link">

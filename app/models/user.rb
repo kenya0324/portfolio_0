@@ -17,8 +17,11 @@ class User < ApplicationRecord
   has_many :passive_notifications, class_name: 'Notification', foreign_key: 'visited_id', dependent: :destroy
 
   validates :name, presence: true
-  validates :email, presence: true
-
+  validates :name, length: { maximum: 20 }
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence: true, length: { maximum: 255 },
+                    format: { with: VALID_EMAIL_REGEX }
+  validates :introduction, length: { maximum: 20 }
 
   def already_liked?(post)
     self.likes.exists?(post_id: post.id)

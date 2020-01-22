@@ -29,12 +29,12 @@
 					    </div>
 					</div>
 					<div class="post_index_post_name">
-						<%= truncate(post.post_name, length: 10) %>
+						<%= post.post_name %>
 					</div>
 				    <div class="post_index_content">
 						<%= simple_format (render_with_hashtags(post.post_content)) %>
 				    </div>
-				    <div class="row">
+				    <div class="row post_index_bottom_link">
 				        <div class="col-6">
 				       	    <div class="post_index_url">
 				       	  	    <div id="post_url_link">
@@ -45,7 +45,7 @@
 					    <div class="col-6">
 						    <div class="post_index_show">
 						  	    <div id="post_index_show_link">
-							        <%= link_to '詳細', users_post_path(post), class:"btn-sm btn-light " %>
+							        <%= link_to 'もっと見る', users_post_path(post), class:"btn-sm btn-light " %>
 							    </div>
 						    </div>
 					    </div>
