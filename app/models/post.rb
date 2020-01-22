@@ -9,7 +9,9 @@ class Post < ApplicationRecord
   has_many :notifications, dependent: :destroy
   validates :post_image, presence: true
   validates :post_name, presence: true
+  validates :post_name, length: { maximum: 38 }
   validates :post_content, presence: true
+  validates :post_content, length: { maximum: 160 }
 
   def liked_by?(user)
 		likes.where(user_id: user.id).exists?

@@ -34,7 +34,14 @@
           </div>
         <% end %>
 
-        <%= render "users/shared/links" %>
+          <div class="sns_signin">
+            <%= link_to user_facebook_omniauth_authorize_path, class:"btn bg-primary facebook_sign_boot",style:  "color:white;" do %>
+               <i class="fab fa-facebook-square facebook_sign"></i> Facebookアカウントでサインアップ
+            <% end %><br>
+            <%= link_to user_google_oauth2_omniauth_authorize_path, class:"btn bg-danger google_sign_boot",style:  "color:white;"  do %>
+               <i class="fab fa-google google_sign"></i> Googleアカウントでサインアップ
+            <% end %>
+          </div>
 
     </div>
 </div>

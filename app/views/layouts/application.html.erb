@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <script src="https://kit.fontawesome.com/65370e92be.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -43,6 +44,11 @@
                   <% end %>
               </div>
           <% else %>
+              <div class="nav_home_responsive">
+                  <%= link_to root_path, style:  "color:black;" do %>
+                     <i class="fas fa-home fa-lg"></i>
+                  <% end %>
+              </div>
               <div class="nav_logout_responsive">
                   <%= link_to new_user_session_path, style:  "color:black;" do %>
                      <i class="fas fa-sign-in-alt fa-lg"></i>
@@ -59,16 +65,6 @@
           <% end %>
 
           <% if user_signed_in? %>
-            <div class="index_link_title">
-              <div id="index_link_title">
-                <% if current_page?(controller: 'users/posts', action: 'index') %>
-                   <%= link_to "timeline", follow_index_path,style:  "color:black;" %>
-                <% else %>
-                   <%= link_to "all", root_path,style:  "color:black;" %>
-                <% end %>
-              </div>
-            </div>
-
             <div class="nav_search">
               <%= form_tag(search_path,:method => 'get') do %>
                       <%= text_field_tag :search, "",placeholder:"item name" %>
@@ -93,16 +89,21 @@
                     <% end %>
                   </li>
                   <li class="nav-item">
-                    <%= link_to users_notifications_path, class:"btn btn-default rounded-pill",style:  "color:black;" do %>
-                       <i class="fas fa-dot-circle fa-lg fa-bookmark-color"></i>
-                    <% end %>
-                    <% if unchecked_notifications.any? %>
-                        <i class="fa fa-circle notification-circle"></i>
+                    <%= link_to follow_index_path, class:"btn btn-default rounded-pill",style:  "color:black;" do %>
+                       <i class="fas fa-users fa-lg fa-users-color"></i>
                     <% end %>
                   </li>
                   <li class="nav-item">
                     <%= link_to users_user_path(current_user.id), class:"btn btn-default rounded-pill",style:  "color:black;" do %>
                        <i class="fas fa-user fa-lg fa-user-color"></i>
+                    <% end %>
+                  </li>
+                  <li class="nav-item">
+                    <%= link_to users_notifications_path, class:"btn btn-default rounded-pill",style:  "color:black;" do %>
+                       <i class="fas fa-dot-circle fa-lg fa-bookmark-color"></i>
+                    <% end %>
+                    <% if unchecked_notifications.any? %>
+                        <i class="fa fa-circle notification-circle"></i>
                     <% end %>
                   </li>
                   <li class="nav-item">
@@ -113,16 +114,18 @@
 
                 <% else %>
                   <li class="nav-item">
-                    <%= link_to "Home", root_path, class:"btn btn-default rounded-pill",style:  "color:black;" %>
+                    <%= link_to root_path, class:"btn btn-default rounded-pill",style:  "color:black;" do %>
+                       <i class="fas fa-home fa-lg fa-home-color"></i>
+                    <% end %>
                   </li>
                   <li class="nav-item">
-                    <%= link_to "About", about_path, class:"btn btn-default rounded-pill",style:  "color:black;" %>
-                  </li>
+                    <%= link_to new_user_session_path, class:"btn btn-default rounded-pill", style:  "color:black;" do %>
+                       <i class="fas fa-sign-in-alt fa-lg"></i>
+                    <% end %>
                   <li class="nav-item">
-                    <%= link_to "Log in", new_user_session_path, class:"btn btn-default rounded-pill",style:  "color:black;" %>
-                  </li>
-                  <li class="nav-item">
-                    <%= link_to "Sign up", new_user_registration_path, class:"btn btn-default rounded-pill",style:  "color:black;" %>
+                    <%= link_to new_user_registration_path, class:"btn btn-default rounded-pill",style:  "color:black;" do %>
+                       <i class="fas fa-user-plus"></i>
+                    <% end %>
                   </li>
                 <% end %>
               </ul>
@@ -214,13 +217,20 @@
             <% end %>
       </div>
 
-
       <footer class="footer_bottom">
-        <div id="post_link">
-          <div class="fixed_post">
-             <%= link_to 'Post', new_users_post_path, remote: true, class:"post_link" %>
-          </div>
+        <div id="page_top">
+           <a href="">
+               <%= image_tag "images.png", size: "45x45", class: "page_top" %>
+           </a>
         </div>
+
+        <div id="post_link">
+           <div class="fixed_post">
+            <%= link_to "Post",new_users_post_path, remote: true ,style:  "color:black;" %>
+           </div>
+        </div>
+
+
           <p class="text-white">picking-inc</p>
           <%= link_to root_path, class:"footer_top_button",style:  "color:black;" do %>
              <i class="fas fa-home fa-lg fa-home-color"></i>
@@ -228,6 +238,11 @@
           <%= link_to follow_index_path, class:"footer_timeline_button",style:  "color:black;" do %>
              <i class="fas fa-users fa-lg fa-users-color"></i>
           <% end %>
+          <div id="post_link">
+             <%= link_to new_users_post_path, remote: true, class:"footer_post_button",style:  "color:black;" do %>
+                <i class="fas fa-plus-square fa-lg fa-user-color"></i>
+             <% end %>
+          </div>
           <%= link_to users_user_path(current_user.id), class:"footer_mypage_button",style:  "color:black;" do %>
              <i class="fas fa-user fa-lg fa-user-color"></i>
           <% end %>

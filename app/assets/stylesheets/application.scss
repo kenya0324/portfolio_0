@@ -17,6 +17,14 @@
 // for Bootstrap4
 @import "bootstrap";
 
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Noto Sans JP', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+}
+
+
 .clearfix::after {
 	content:"";
 	display: block;
@@ -49,6 +57,10 @@
 	margin-left: 15px;
 }
 
+.nav_home_responsive{
+	display: none;
+}
+
 .nav_logout_responsive{
 	display: none;
 }
@@ -59,9 +71,9 @@
 
 .nav_search_logout{
 	margin-top: 5px;
-	margin-right: 50px;
-	width: 700px;
-	text-align: center;
+	width: 250px;
+    position: fixed;
+    left: 615px;
 }
 
 .user_notlogin_about{
@@ -149,10 +161,16 @@
 	color: black;
 	border: 2px solid whitesmoke;
 	width: 120px;
+	white-space: nowrap;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .nav_home_bar{
     text-align: right;
+    position: fixed;
+    right: 10px;
 }
 
 .nav_home_select{
@@ -182,6 +200,10 @@
    display: none;
 }
 
+.footer_post_button{
+   display: none;
+}
+
 .footer_mypage_button{
    display: none;
 }
@@ -193,6 +215,28 @@
 footer{
     margin-top: auto;
 }
+
+#page_top{
+  width: 60px;
+  height: 60px;
+  position: fixed;
+  left: 75px;
+  bottom: 35px;
+  opacity: 0.6;
+}
+#page_top a{
+  width: 60px;
+  height: 60px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '';
+  font-size: 50px;
+  color: #333;
+}
+
 /*-------iphonex------------------------------------------------------------------------------------------------------*/
 
 @media screen and (min-width:376px){
@@ -222,7 +266,7 @@ footer{
 	top: 0px;
     left: 0px;
 	width: 100vw;
-	height: 30px;
+	height: 150px;
 	margin-bottom: 20px;
 	background: #fff;
 	z-index: 20;
@@ -244,11 +288,21 @@ footer{
 
 }
 
+.nav_home_responsive{
+	display: block;
+	z-index: 30;
+	position: fixed;
+	left: 73vw;
+	top: 55px;
+	margin-top: 4px;
+}
+
 .nav_logout_responsive{
 	display: block;
 	z-index: 30;
 	position: fixed;
 	left: 90vw;
+	top: 55px;
 	margin-top: 4px;
 }
 
@@ -257,6 +311,7 @@ footer{
 	z-index: 30;
 	position: fixed;
 	right: 45px;
+	top: 55px;
 	margin-top: 2.5px;
 }
 
@@ -273,36 +328,7 @@ footer{
 }
 
 .fixed_post{
-   width: min-content;
-   font-size: 15px;
-   position: fixed;
-   bottom: 60px;
-   left: 74vw;
-   border-radius: 200px;
-   border: 2px solid whitesmoke;
-   display: inline-block;
-   padding: 0.6em 2em;
-   margin: 0 0 1em;
-   background: #fff;
-   color: #333;
-   cursor: pointer;
-   transition: all 0.3s ease 0s;
-   z-index: 30;
-}
-
-.fixed_post:hover {
-    font-size: 15px;
-    position: fixed;
-    bottom: 60px;
-    right: 5px;
-    border-radius: 200px;
-    background: #333;
-    border: 1px #333;
-}
-
-#post_link a{
-    text-decoration: none;
-    color: black;
+    display: none;
 }
 
 /* ---------------------------- */
@@ -395,8 +421,10 @@ footer{
 /*-------header_search-------------------------------*/
 
 .nav_search{
+	position: fixed;
+	top: 100px;
+	left: 70px;
 	margin-top: 5px;
-	margin-left: 50px;
 	width: 250px;
 	text-align: center;
 }
@@ -560,7 +588,7 @@ footer{
 }
 
 .footer_top_button{
-	width: 93.75px;
+	width: 75px;
 	height: 70px;
 	float: left;
 	padding-top: 24px;
@@ -570,7 +598,17 @@ footer{
 }
 
 .footer_timeline_button{
-	width: 93.75px;
+	width: 75px;
+	height: 70px;
+	float: left;
+	padding-top: 24px;
+	display: block;
+	text-align: center;
+	background-color: #333;
+}
+
+.footer_post_button{
+	width: 75px;
 	height: 70px;
 	float: left;
 	padding-top: 24px;
@@ -580,7 +618,7 @@ footer{
 }
 
 .footer_mypage_button{
-	width: 93.75px;
+	width: 75px;
 	height: 70px;
 	float: left;
 	padding-top: 24px;
@@ -590,7 +628,7 @@ footer{
 }
 
 .footer_notification_button{
-	width: 93.75px;
+	width: 75px;
 	height: 70px;
 	float: left;
 	padding-top: 24px;
@@ -619,6 +657,26 @@ footer{
     margin-top: auto;
 }
 
+#page_top{
+  width: 60px;
+  height: 100px;
+  position: fixed;
+  left: 325px;
+  bottom: 50px;
+  opacity: 0.6;
+}
+#page_top a{
+  width: 60px;
+  height: 60px;
+  text-decoration: none;
+}
+#page_top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '';
+  font-size: 50px;
+  color: #333;
+}
 
 
 }

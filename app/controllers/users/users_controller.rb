@@ -1,4 +1,7 @@
 class Users::UsersController < ApplicationController
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update, :destroy]
+
   def show
       @posts = Post.all.order(created_at: :desc)
   	  @user = User.find(params[:id])
@@ -168,8 +171,16 @@ class Users::UsersController < ApplicationController
   end
 
  private
+
   def user_params
       params.require(:user).permit(:name, :email, :introduction, :user_image)
+  end
+
+  def correct_user
+      @user = User.find(params[:id])
+      if current_user != @user
+        redirect_to root_path
+      end
   end
 
 end

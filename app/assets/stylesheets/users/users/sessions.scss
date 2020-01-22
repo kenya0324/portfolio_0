@@ -1,6 +1,6 @@
 .users_sessions_new_all{
 	width: 400px;
-	height: 450px;
+	height: 470px;
 	text-align: center;
 	border: 2px solid whitesmoke;
 	margin-left: 350px;
@@ -10,6 +10,32 @@
 .users_sessions_new_pass_rem{
 	margin-bottom: 20px;
 }
+
+.new_user_password{
+	margin-top: 20px;
+}
+
+.sns_login{
+	margin-top: 20px;
+}
+
+.facebook_log{
+    margin-top: 10px;
+}
+
+.facebook_log_boot{
+	width: 280px;
+	margin-bottom: 5px;
+}
+
+.google_log{
+    margin-top: 10px;
+}
+
+.google_log_boot{
+	width: 280px;
+}
+
 
 @media screen and (max-width:375px){
 
@@ -54,10 +80,36 @@
 	color: white;
 }
 
+.new_user_password{
+	margin-top: 20px;
+}
+
+.sns_login{
+	margin-top: 20px;
+}
+
+.facebook_log{
+    margin-top: 10px;
+}
+
+.facebook_log_boot{
+	width: 80vw;
+	margin-bottom: 5px;
+}
+
+.google_log{
+    margin-top: 10px;
+}
+
+.google_log_boot{
+	width: 80vw;
+}
+
 .devise_footer_bottom{
    height: 50px;
    background: #333;
 }
+
 
 #wrapper{
    display: flex;
