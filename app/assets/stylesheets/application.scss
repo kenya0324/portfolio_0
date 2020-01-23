@@ -131,16 +131,17 @@
 }
 
 .rank_post_all{
-	height: 70px;
-	margin-bottom: 60px;
+	margin-bottom: 2px;
+	width: 144px;
+	border: 2px solid whitesmoke;
 }
 
 .rank_title{
-	margin-bottom: 20px;
+	margin-bottom: 0px;
 }
 
 .rank_number{
-	margin-top: 10px;
+	margin-top: 2px;
 	margin-right: 20px;
 	font-size: 25px;
 }
@@ -152,10 +153,28 @@
 	height: 50px;
 }
 
+.rank_post_name{
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-bottom: 5px;
+	display: inline-block;
+	height: 50px;
+}
+
+.rank_post_url{
+	height: 25px;
+	width: 120px;
+	text-align: center;
+	border-radius: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	background: gold;
+}
+
 #rank_post_name a{
 	display: inline-block;
 	margin-left: 10px;
-	margin-top: 10px;
+	margin-top: 15px;
 	margin-bottom: 5px;
 	height: 30px;
 	color: black;
@@ -165,6 +184,16 @@
     word-wrap: break-word;
     text-overflow: ellipsis;
     overflow: hidden;
+}
+
+.recommend_post_url{
+	height: 25px;
+	width: 120px;
+	text-align: center;
+	border-radius: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+	background: gold;
 }
 
 .nav_home_bar{
@@ -337,7 +366,7 @@ footer{
 
 #hm-icon{
   position: fixed;
-  top: 50px;
+  top: 55px;
   margin-top: 5px;
   z-index: 60;
 }

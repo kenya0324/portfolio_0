@@ -5,7 +5,10 @@
 			<%= form_for @post,url:users_posts_path, remote: true do |f| %>
 
 				<div class="modal-header">
-	                <h4 class="modal-title">post</h4>
+	                <h4 class="modal-title">post</h4><br>
+	                <div id="post_create_error_messages">
+		                <%= render 'layouts/error_messages', model: f.object %>
+		            </div>
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	                   <span aria-hidden="true">&times;</span>
 	                </button>
