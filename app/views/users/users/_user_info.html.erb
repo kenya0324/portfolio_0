@@ -1,12 +1,12 @@
 <div class="user_show_image">
-    <%= attachment_image_tag @user, :user_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "100x100" %>
-    <%= render 'users/users/follow_form' %>
+    <%= attachment_image_tag user, :user_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "100x100" %>
+    <%= render 'users/users/follow_form', user: user %>
 </div>
 <div class="user_show_user_name">
-    <%= @user.name %>
+    <%= user.name %>
 </div>
 <div class="user_show_user_introduction">
-    <%= @user.introduction %>
+    <%= user.introduction %>
 </div>
 <div class="user_show_user_follow_count">
     <div class="follow" id = "follow-count">
