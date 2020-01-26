@@ -28,7 +28,11 @@
                 <h4>category</h4>
                 <div class=category_responsive>
                    <% @categories.each do |cate| %>
-                      <p><%= link_to cate.name, "/category/#{cate.id}" ,style:  "color:white;" %></p>
+                     <% if user_signed_in? %>
+                      <p><%= link_to cate.name, "/users/category/#{cate.id}" ,style:  "color:white;" %></p>
+                     <% elsif admin_signed_in? %>
+                      <p><%= link_to cate.name, "/admins/category/#{cate.id}" ,style:  "color:white;" %></p>
+                     <% end %>
                    <% end %>
                 </div>
             </div>
@@ -71,6 +75,13 @@
           <% if user_signed_in? %>
             <div class="nav_search">
               <%= form_tag(search_path,:method => 'get') do %>
+                      <%= text_field_tag :search, "",placeholder:"item name" %>
+                      <button type="submit" class="search_button"  id="search_button_link"><i class="fas fa-search"></i></button>
+              <% end %>
+            </div>
+          <% elsif admin_signed_in? %>
+            <div class="nav_search">
+              <%= form_tag(admins_search_path,:method => 'get') do %>
                       <%= text_field_tag :search, "",placeholder:"item name" %>
                       <button type="submit" class="search_button"  id="search_button_link"><i class="fas fa-search"></i></button>
               <% end %>
@@ -130,7 +141,7 @@
                     <% end %>
                   </li>
                   <li class="nav-item">
-                    <%= link_to hashtag_all_path, class:"btn btn-default rounded-pill nav_mypage_button" do %>
+                    <%= link_to admins_hashtags_path, class:"btn btn-default rounded-pill nav_mypage_button" do %>
                        <i class="fas fa-hashtag fa-lg fa-users-color"></i>
                     <% end %>
                   </li>
@@ -172,7 +183,7 @@
             <h5>category</h5>
           </div>
             <% @categories.each do |cate| %>
-                <p><%= link_to cate.name, "/category/#{cate.id}" ,style:  "color:black;" %></p>
+                <p><%= link_to cate.name, "/admins/category/#{cate.id}" ,style:  "color:black;" %></p>
             <% end %>
         </div>
 
@@ -212,7 +223,7 @@
 
     <% elsif user_signed_in?%>
 
-        <% if user_signed_in? %>
+        <%= yield %>
 
           <div class="fixed_rank">
             <div class="rank_title">
@@ -303,7 +314,7 @@
               <div class="footer_term"><%= link_to "利用規約",term_path,style:  "color:white;" %></div>
             </div>
 
-<!---------------------------------PC時のfooterのリンクボタンを記述しています------------------------------------------------>
+<!---------------------------------レスポンシブ時のfooterのリンクボタンを記述しています--------------------------------------->
 
             <div class="responsive_footer_button_all">
               <%= link_to root_path, class:"footer_top_button",style:  "color:black;" do %>
@@ -336,9 +347,9 @@
              </div>
           </div>
 
-        <% else %>
+    <% else %>
 
-        <%= yield %>
+　　　　　　<%= yield %>
 
 <!-------------------------------非ログイン時のPC時のfooterのリンクを記述しています------------------------------------------->
 
@@ -355,8 +366,6 @@
               <div class="footer_term"><%= link_to "利用規約",term_path,style:  "color:white;" %></div>
             </div>
           </footer>
-
-        <% end %>
 
     <% end %>
 
