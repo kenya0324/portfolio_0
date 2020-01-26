@@ -1,11 +1,11 @@
 class Admins::CategoriesController < ApplicationController
 
     def index
-		@categories = Category.all
-	end
+		    @categories = Category.all
+	  end
 
 
-	def new
+	  def new
         @category = Category.new
     end
 

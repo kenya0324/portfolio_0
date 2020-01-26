@@ -2,6 +2,16 @@
 
 	<%= link_to '登録', new_admins_category_path, remote: true, class: "btn btn-sm, btn-primary" %>
 
+	<div class="post_category_title">
+	 	<% if params[:id] == "1" %>
+            <h4>Fashion</h4>
+        <% elsif params[:id] == "2" %>
+            <h4>Interior</h4>
+        <% else %>
+            <h4>Life goods</h4>
+        <% end %>
+	</div>
+
 	<div class="row">
 	 <div id="category-all">
 		<% @categories.each do |cate| %>

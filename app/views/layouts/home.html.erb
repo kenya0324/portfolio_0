@@ -22,8 +22,14 @@
       <%= yield %>
 
 
-      <footer class="about_footer_bottom">
-          <p class="text-white">picking-inc</p>
+      <footer class="footer_bottom">
+
+        <div class="footer_information_all">
+          <div class="footer_picking_name">picking-inc</div>
+          <div class="footer_privacy_policy"><%= link_to "プライバシーポリシー",privacy_policy_path,style:  "color:white;" %></div>
+          <div class="footer_term"><%= link_to "利用規約",term_path,style:  "color:white;" %></div>
+        </div>
+
       </footer>
 
 

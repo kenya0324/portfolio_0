@@ -116,7 +116,6 @@ class Users::PostsController < ApplicationController
           @post_posts = Post.all.order(created_at: :desc)
           @user = current_user
           like = @user.likes.last
-
           post = like.post
           category_recommend = Category.find_by(name: post.category.name)
           post_recommend = category_recommend.posts

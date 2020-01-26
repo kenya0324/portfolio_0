@@ -25,10 +25,12 @@ class Users::UsersController < ApplicationController
 
   end
 
-  def destroy
+  def hide
       @user = User.find(params[:id])
-      @user.destroy
-      redirect_to posts_path
+      @user.update(is_deleted: true)
+      reset_sesstion
+      flash[:notice] = "ありがとうございました。またのご利用を心よりお待ちしてお待ちしております"
+      redirect_to root_path
   end
 
   def following
