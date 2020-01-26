@@ -21,7 +21,7 @@
 					    <div class="col-6">
 						    <div class="post_index_post_category">
 						  	    <div id="post_index_category_link">
-						  	        <%= link_to "/category/#{post.category.id}" do  %>
+						  	        <%= link_to "/admins/category/#{post.category.id}" do  %>
 							             <%= post.category.name %>
 							        <% end %>
 							    </div>
@@ -32,7 +32,7 @@
 						<%= post.post_name %>
 					</div>
 				    <div class="post_index_content">
-						<%= simple_format (render_with_hashtags(post.post_content)) %>
+						<%= simple_format (render_with_admins_hashtags(post.post_content)) %>
 				    </div>
 				    <div class="row post_index_bottom_link">
 				        <div class="col-6">

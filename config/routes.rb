@@ -5,10 +5,12 @@ Rails.application.routes.draw do
   get '/term'  => 'homes#term', as:'term'
   get '/users/posts/follow_index' => 'users/posts#follow_index', as:'follow_index'
   get '/search' => 'users/posts#search'
+  get '/admins/search' => 'admins/posts#search'
   get '/post/hashtag/:name' => 'users/posts#hashtag'
+  get '/admins/post/hashtag/:name' => 'admins/posts#hashtag'
   get '/category/:id' => 'users/posts#category'
+  get '/admins/category/:id' => 'admins/posts#category'
   get '/want/:id' => 'users/users#want',   as: 'want'
-  get '/hashtag' => 'admins/posts#hashtag_all',  as:'hashtag_all'
   post   '/like/:post_id' => 'users/likes#like',   as: 'like'
   delete '/like/:post_id' => 'users/likes#unlike', as: 'unlike'
   put '/users/:id' => 'users/users#hide', as: 'hide'
@@ -30,6 +32,7 @@ Rails.application.routes.draw do
     resources :categories
     resources :posts
     resources :users
+    resources :hashtags, only: [:index, :destroy]
   end
 
   namespace :users do
