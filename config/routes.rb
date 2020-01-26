@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
   root 'users/posts#index'
-  get '/about' => 'users/abouts#about', as:'about'
+  get '/about' => 'homes#about', as:'about'
+  get '/privacy_policy'  => 'homes#privacy_policy', as:'privacy_policy'
+  get '/term'  => 'homes#term', as:'term'
   get '/users/posts/follow_index' => 'users/posts#follow_index', as:'follow_index'
   get '/search' => 'users/posts#search'
   get '/post/hashtag/:name' => 'users/posts#hashtag'
   get '/category/:id' => 'users/posts#category'
   get '/want/:id' => 'users/users#want',   as: 'want'
+  get '/hashtag' => 'admins/posts#hashtag_all',  as:'hashtag_all'
   post   '/like/:post_id' => 'users/likes#like',   as: 'like'
   delete '/like/:post_id' => 'users/likes#unlike', as: 'unlike'
+  put '/users/:id' => 'users/users#hide', as: 'hide'
 
   devise_for :admins, controllers: {
     sessions: 'admins/sessions',
@@ -22,12 +26,14 @@ Rails.application.routes.draw do
   }
 
   namespace :admins do
-    root 'admins/categories#index', as: :root
+    root 'admins/posts#index', as: :root
     resources :categories
+    resources :posts
+    resources :users
   end
 
   namespace :users do
-    resources :users, only: [:show, :edit, :update, :destroy] do
+    resources :users, only: [:show, :edit, :update] do
       member do
         get :following, :followers
       end

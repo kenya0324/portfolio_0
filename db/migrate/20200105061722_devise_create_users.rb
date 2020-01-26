@@ -37,7 +37,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
 
 
       t.timestamps null: false
-      t.datetime :deleted_at
+      t.boolean :is_deleted, :default =>false
     end
 
     add_index :users, :email,                unique: true

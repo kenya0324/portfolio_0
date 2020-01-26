@@ -1,5 +1,5 @@
 <div class="container clearfix">
-    <div class="user_show_title"><h4>Mypage</h4></div>
+    <div class="user_show_title"><h4>user page</h4></div>
 		<div class="row">
 		    <div class="user_show_info">
 			    <div id="user_info">
@@ -16,7 +16,7 @@
 					    </div>
 					<% end %>
 				    <div class="user_show_follow" id = "follow-count">
-			            <%= render 'follow_count' %>
+			            <%= render 'users/users/follow_count' %>
 			        </div>
 		        </div>
 		    </div>
@@ -34,8 +34,6 @@
             	<div class="follow_form">
                		<%= render 'users/users/follow_form', user: @user %>
                	</div>
-               	<%= link_to 'want list', want_path(@user),class:"btn-sm btn-light " %>
-			    <%= link_to '編集', edit_users_user_path(@user), remote: true, class:"btn-sm btn-light " %>
 			    <%= link_to '退会', users_user_path(@user),method: :delete, data:{ confirm: '本当に退会しますか?',cancel: 'キャンセル', commit: '退会する'}, title: '退会確認', class:"btn-sm btn-light "%>
             </div>
         </div>
@@ -86,7 +84,7 @@
 						    <div class="col-6">
 							    <div class="post_index_show">
 							  	    <div id="post_index_show_link">
-								        <%= link_to '詳細', users_post_path(post), class:"btn-sm btn-light " %>
+								        <%= link_to 'もっと見る', admins_post_path(post), class:"btn-sm btn-light " %>
 								    </div>
 							    </div>
 						    </div>
