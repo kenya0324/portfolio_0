@@ -292,6 +292,7 @@
 	bottom: 60px;
 	background: linear-gradient(to bottom right, blue, pink);
 	opacity: 0.8;
+	z-index: 20;
 }
 
 .user_notlogin_about_all :hover{
@@ -367,7 +368,7 @@ footer{
     margin-top: auto;
 }
 
-#page_top{
+.page_top{
   width: 60px;
   height: 60px;
   position: fixed;
@@ -375,12 +376,12 @@ footer{
   bottom: 35px;
   opacity: 0.6;
 }
-#page_top a{
+.page_top a{
   width: 60px;
   height: 60px;
   text-decoration: none;
 }
-#page_top a::before{
+.page_top a::before{
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   content: '';
@@ -486,27 +487,27 @@ footer{
 /* --- ハンバーガーアイコン --- */
 /* ---------------------------- */
 
-#hm-icon{
+#hm_category{
   position: fixed;
   top: 55px;
   margin-top: 5px;
   z-index: 60;
 }
 
-.menu-trigger,
-.menu-trigger span {
+.menu_trigger,
+.menu_trigger span {
   display: inline-block;
   transition: all .4s;
   box-sizing: border-box;
 }
 
-.menu-trigger {
+.menu_trigger {
   position: relative;
   width: 30px;
   height: 14px;
 }
 
-.menu-trigger span {
+.menu_trigger span {
   position: absolute;
   left: 0;
   width: 100%;
@@ -515,29 +516,29 @@ footer{
   border-radius: 4px;
 }
 
-.menu-trigger span:nth-of-type(1) {
+.menu_trigger span:nth-of-type(1) {
   top: 0;
 }
 
-.menu-trigger span:nth-of-type(2) {
+.menu_trigger span:nth-of-type(2) {
   top: 20px;
 }
 
-.menu-trigger span:nth-of-type(3) {
+.menu_trigger span:nth-of-type(3) {
   bottom: 0;
 }
 
-.menu-trigger.active span:nth-of-type(1) {
+.menu_trigger.active span:nth-of-type(1) {
   -webkit-transform: translateY(5px) rotate(-45deg);
   transform: translateY(5px) rotate(-45deg);
   background-color: black;
 }
 
-.menu-trigger.active span:nth-of-type(2) {
+.menu_trigger.active span:nth-of-type(2) {
   opacity: 0;
 }
 
-.menu-trigger.active span:nth-of-type(3) {
+.menu_trigger.active span:nth-of-type(3) {
   -webkit-transform: translateY(-5px) rotate(45deg);
   transform: translateY(-5px) rotate(45deg);
   background-color: black;
@@ -546,7 +547,7 @@ footer{
 /* ------ spメニュー ------ */
 /* ------------------------ */
 
-#sp-menu {
+#sp_menu {
   width: 100vw;
   position: fixed;
   top: 0;
@@ -558,12 +559,12 @@ footer{
   z-index: 60;
 }
 
-#sp-menu li{
+#sp_menu li{
   text-align: center;
   margin-bottom: 30px;
 }
 
-#sp-menu a{
+#sp_menu a{
   color: #333;
   text-decoration: none;
   font-weight: bold;
@@ -817,20 +818,18 @@ footer{
     margin-top: auto;
 }
 
-#page_top{
+.page_top{
   width: 60px;
-  height: 100px;
   position: fixed;
-  left: 325px;
-  bottom: 50px;
+  left: 310px;
+  bottom: 75px;
   opacity: 0.6;
 }
-#page_top a{
+.page_top a{
   width: 60px;
-  height: 60px;
   text-decoration: none;
 }
-#page_top a::before{
+.page_top a::before{
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   content: '';

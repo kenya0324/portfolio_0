@@ -3,7 +3,7 @@
 class Users::SessionsController < Devise::SessionsController
   layout 'devise'
   # before_action :configure_sign_in_params, only: [:create]
-
+  before_action :reject_user, only: [:create]
   # GET /resource/sign_in
   # def new
   #   super
@@ -19,7 +19,14 @@ class Users::SessionsController < Devise::SessionsController
   #   super
   # end
 
-  # protected
+  protected
+  def reject_user
+    @user = User.find_by(email: params[:user][:email].downcase)
+    if (@user.valid_password?(params[:user][:password]) && (@user.active_for_authentication? == false))
+      flash[:error] = "退会済みです。"
+      redirect_to new_user_session_path
+    end
+  end
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_in_params

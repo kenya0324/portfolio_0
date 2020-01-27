@@ -30,7 +30,7 @@ class Users::PostsController < ApplicationController
   end
 
   def search
-      @post_search = Post.where('posts.post_name LIKE(?)', "%#{params[:search]}%").order(created_at: :desc)
+      @post_search = Post.where(['posts.post_name  LIKE(?) OR posts.post_content LIKE(?)', "%#{params[:search]}%","%#{params[:search]}%"]).order(created_at: :desc)
   end
 
   def show

@@ -6,7 +6,6 @@
     <%= csp_meta_tag %>
     <script src="https://kit.fontawesome.com/65370e92be.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Noto+Sans+JP:400,700" rel="stylesheet">
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -24,12 +23,12 @@
 
 <!--------------------------------レスポンシブ時のheaderのハンバーガーメニューを記述しています-------------------------------->
 
-            <div id="sp-menu" class="sp">
+            <div id="sp_menu" class="sp">
                 <h4>category</h4>
                 <div class=category_responsive>
                    <% @categories.each do |cate| %>
                      <% if user_signed_in? %>
-                      <p><%= link_to cate.name, "/users/category/#{cate.id}" ,style:  "color:white;" %></p>
+                      <p><%= link_to cate.name, "/category/#{cate.id}" ,style:  "color:white;" %></p>
                      <% elsif admin_signed_in? %>
                       <p><%= link_to cate.name, "/admins/category/#{cate.id}" ,style:  "color:white;" %></p>
                      <% end %>
@@ -37,7 +36,7 @@
                 </div>
             </div>
 
-            <div id="hm-icon" class="sp menu-trigger">
+            <div id="hm_category" class="sp menu_trigger">
                  <span></span>
                  <span></span>
                  <span></span>
@@ -296,7 +295,7 @@
           </div>
 
           <footer class="footer_bottom">
-            <div id="page_top">
+            <div class="page_top">
                <a href="">
                    <%= image_tag "images.png", size: "45x45", class: "page_top" %>
                </a>
@@ -354,7 +353,7 @@
 <!-------------------------------非ログイン時のPC時のfooterのリンクを記述しています------------------------------------------->
 
           <footer class="footer_bottom">
-            <div id="page_top">
+            <div class="page_top">
                <a href="">
                    <%= image_tag "images.png", size: "45x45", class: "page_top" %>
                </a>

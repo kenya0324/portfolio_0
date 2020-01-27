@@ -27,16 +27,18 @@
 		        </div>
                	<%= link_to 'want list', want_path(@user),class:"btn-sm btn-light " %>
 			    <%= link_to '編集', edit_users_user_path(@user), remote: true, class:"btn-sm btn-light " %>
-			    <%= link_to '退会', hide_path(@user),method: :delete, data:{ confirm: '本当に退会しますか?',cancel: 'キャンセル', commit: '退会する'}, title: '退会確認', class:"btn-sm btn-light "%>
+			    <%= link_to '退会', hide_path(@user),method: :put, data:{ confirm: '本当に退会しますか?',cancel: 'キャンセル', commit: '退会する'}, title: '退会確認', class:"btn-sm btn-light "%>
             </div>
 
             <div class="col-3 user_show_option">
             	<div class="follow_form">
                		<%= render 'users/users/follow_form', user: @user %>
                	</div>
-               	<%= link_to 'want list', want_path(@user),class:"btn-sm btn-light " %>
-			    <%= link_to '編集', edit_users_user_path(@user), remote: true, class:"btn-sm btn-light " %>
-			    <%= link_to '退会', hide__path(@user),method: :delete, data:{ confirm: '本当に退会しますか?',cancel: 'キャンセル', commit: '退会する'}, title: '退会確認', class:"btn-sm btn-light "%>
+               	　　<% if user_signed_in? %>
+		               	<%= link_to 'want list', want_path(@user),class:"btn-sm btn-light " %>
+					    <%= link_to '編集', edit_users_user_path(@user), remote: true, class:"btn-sm btn-light " %>
+					    <%= link_to '退会', hide_path(@user),method: :put, data:{ confirm: '本当に退会しますか?',cancel: 'キャンセル', commit: '退会する'}, title: '退会確認', class:"btn-sm btn-light "%>
+					<% end %>
             </div>
         </div>
 
@@ -86,7 +88,7 @@
 						    <div class="col-6">
 							    <div class="post_index_show">
 							  	    <div id="post_index_show_link">
-								        <%= link_to '詳細', users_post_path(post), class:"btn-sm btn-light " %>
+								        <%= link_to 'もっと見る', users_post_path(post), class:"btn-sm btn-light " %>
 								    </div>
 							    </div>
 						    </div>
