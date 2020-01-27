@@ -124,7 +124,6 @@ ActiveRecord::Schema.define(version: 2020_01_19_033639) do
     t.boolean "is_deleted", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-    t.index [nil], name: "index_users_on_deleted_at"
   end
 
 end
