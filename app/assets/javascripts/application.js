@@ -12,34 +12,38 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require turbolinks
-//= require_tree .
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
 //= require data-confirm-modal
+//= require turbolinks
+//= require_tree .
 
 /* レスポンシブ時のハンバーガーメニューの動きを指示しています */
 $(document).on("turbolinks:load", function() {
-  $('.menu-trigger').on('click', function() {
+  $('.menu_trigger').on('click', function() {
     $(this).toggleClass('active');
-    $('#sp-menu').fadeToggle();
+    $('#sp_menu').fadeToggle();
     return false;
   });
- });
+});
 
-$(“#page_top”).hide();
-  $(window).scroll(function(){
-    $(‘#pos’).text($(this).scrollTop());
-    if ($(this).scrollTop() > 60){
-      $(“#back-to-top”).fadeIn();
-    }else{
-      $(‘#back-to-top’).fadeOut();
-    }
-  });
-  $(‘#page_top a’).click(function() {
-      $(‘html, body’).animate({
-          scrollTop:0
-      }, 800);
-      return false;
-  });
+
+/* レスポンシブ時のpage_topの動きを指示しています */
+$(function(){
+  $(".page_top").hide();
+    $(window).scroll(function(){
+      $('#pos').text($(this).scrollTop());
+      if ($(this).scrollTop() > 60){
+        $(".page_top").fadeIn();
+      }else{
+        $('.page_top').fadeOut();
+      }
+    });
+    $('.page_top a').click(function() {
+        $('html, body').animate({
+            scrollTop:0
+        }, 800);
+        return false;
+    });
+});

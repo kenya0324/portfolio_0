@@ -4,7 +4,11 @@
         <h2>Log in</h2>
 
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-
+          <% flash.each do |message_type, message| %>
+              <div class="alert alert-<%= message_type %>">
+                <%= message %>
+              </div>
+          <% end %>
           <%= render 'layouts/error_messages', model: f.object %>
 
           <div class="field">

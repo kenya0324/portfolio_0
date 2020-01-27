@@ -23,6 +23,10 @@ class User < ApplicationRecord
                     format: { with: VALID_EMAIL_REGEX }
   validates :introduction, length: { maximum: 20 }
 
+  def active_for_authentication?
+    super && (self.is_deleted == false)
+  end
+
   def already_liked?(post)
     self.likes.exists?(post_id: post.id)
   end
