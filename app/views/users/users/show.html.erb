@@ -10,10 +10,11 @@
 			            <%= @user.name %>
 			        </div>
 			        <% if @user.introduction.nil? %>
-                    <% else %>
-		                <div class="user_show_user_introduction">
+                        <div class="user_show_user_introduction">
 					        <%= @user.introduction %>
 					    </div>
+                    <% else %>
+
 					<% end %>
 				    <div class="user_show_follow" id = "follow-count">
 			            <%= render 'follow_count' %>
