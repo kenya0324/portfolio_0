@@ -130,8 +130,13 @@ class Users::PostsController < ApplicationController
              @posts = Post.all.order(created_at: :desc)
           end
         else
-          @random = Post.order("Random()").last
-          @posts = Post.all.order(created_at: :desc)
+          if @random != nil
+            @random = Post.order("Random()").last
+            @posts = Post.all.order(created_at: :desc)
+          else
+            @random = "1"
+            p @random
+          end
         end
       else
         if @random != nil
