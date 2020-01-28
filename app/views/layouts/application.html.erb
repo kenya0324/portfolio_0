@@ -31,6 +31,8 @@
                       <p><%= link_to cate.name, "/category/#{cate.id}" ,style:  "color:white;" %></p>
                      <% elsif admin_signed_in? %>
                       <p><%= link_to cate.name, "/admins/category/#{cate.id}" ,style:  "color:white;" %></p>
+                     <% else %>
+                      <p><%= link_to cate.name, "/category/#{cate.id}" ,style:  "color:white;" %></p>
                      <% end %>
                    <% end %>
                 </div>
