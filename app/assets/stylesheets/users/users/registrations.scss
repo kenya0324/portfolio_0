@@ -1,10 +1,21 @@
 .users_registrations_new_all{
-	width: 400px;
+	width: 310px;
 	text-align: center;
-	border: 2px solid whitesmoke;
-	margin-left: 350px;
+	margin-left: 395px;
 	margin-bottom: 40px;
 	padding-top: 10px;
+}
+
+.users_registrations_new_name{
+	margin-top: 20px;
+}
+
+.users_registrations_new_email{
+	margin-top: 10px;
+}
+
+.users_registrations_new_password{
+	margin-top: 10px;
 }
 
 .users_registrations_new_pass_form{
@@ -65,7 +76,6 @@
 .users_registrations_new_all{
 	width: 100%;
 	text-align: center;
-	border: 2px solid whitesmoke;
 	margin-top: 20px;
 	margin-left: 0px;
 	margin-bottom: 30px;
