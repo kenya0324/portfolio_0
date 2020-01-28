@@ -11,18 +11,18 @@
           <% end %>
           <%= render 'layouts/error_messages', model: f.object %>
 
-          <div class="field">
+          <div class="field users_sessions_new_email">
             <%= f.label :email %><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control session_form" %>
           </div>
 
-          <div class="field">
+          <div class="field users_sessions_new_password">
             <%= f.label :password %><br />
             <%= f.password_field :password, autocomplete: "current-password" , class: "form-control session_form"%>
           </div>
 
           <% if devise_mapping.rememberable? %>
-            <div class="users_sessions_new_pass_rem">
+            <div class="users_sessions_new_pass_rem ">
               <%= f.check_box :remember_me %>
               <%= f.label :remember_me %>
             </div>
