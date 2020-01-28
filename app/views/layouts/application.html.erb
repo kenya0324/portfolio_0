@@ -272,7 +272,7 @@
                     </div>
                   </div>
                 <% else %>
-                  <% if @random != nil %>
+                  <% if @random != "1" %>
                     <div class="rank_post_all">
                       <div class="rank_post_image">
                         <%= link_to users_post_path(@posts) do %>
@@ -290,7 +290,7 @@
                         </div>
                       </div>
                     </div>
-                  <% elsif @random == "1" %>
+                  <% else %>
                   <% end %>
                 <% end %>
           </div>
