@@ -47,9 +47,10 @@
 
 .notification-circle{
 	color: springgreen;
-	position: fixed;
 	bottom: 35px;
-	right: 17px;
+	left: 340px;
+	z-index: 10;
+	width: 25px;
 }
 
 }
