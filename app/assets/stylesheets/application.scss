@@ -576,7 +576,7 @@ footer{
 	top: 60px;
 	left: 70px;
 	margin-top: 5px;
-	width: 250px;
+	width: 70%;
 	text-align: center;
 }
 
@@ -727,11 +727,12 @@ footer{
 }
 
 .footer_bottom{
-	height: 100px;
+	height: 70px;
 	background: #333;
 	z-index: 50;
 	width: 100vw;
 	bottom: 0;
+	position: fixed;
 }
 
 .text-white{
