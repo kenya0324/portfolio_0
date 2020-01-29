@@ -22,7 +22,6 @@ class Users::UsersController < ApplicationController
       else
          render :update_error
       end
-
   end
 
   def hide
