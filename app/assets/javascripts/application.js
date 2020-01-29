@@ -63,7 +63,7 @@ $(function(){
 
 $(function(){
   $(window).on("scroll touchmove", function(){
-      $(".responsive_footer_bottom").css('display', 'none').delay(500).fadeIn();
+      $(".responsive_footer_bottom").css('display', 'none').delay(300).fadeIn('fast');
   });
 });
 
