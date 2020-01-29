@@ -33,7 +33,6 @@ $(document).on("turbolinks:load", function() {
 $(function(){
   $(".page_top").hide();
     $(window).scroll(function(){
-      $('#pos').text($(this).scrollTop());
       if ($(this).scrollTop() > 60){
         $(".page_top").fadeIn();
       }else{
@@ -47,3 +46,28 @@ $(function(){
         return false;
     });
 });
+
+/* about_barの動きを指示しています */
+$(function(){
+  $(".user_notlogin_about_all").hide();
+    $(window).scroll(function(){
+      if ($(this).scrollTop() > 60){
+        $(".user_notlogin_about_all").fadeIn();
+      }else{
+        $('.user_notlogin_about_all').fadeOut();
+      }
+    });
+});
+
+/* レスポンシブ時のfooter_bottomの動きを指示しています */
+$(function(){
+  $(".footer_bottom").hide();
+    $(window).scroll(function(){
+      if ($(this).scrollTop() > 60){
+        $(".footer_bottom").fadeIn();
+      }else{
+        $('.footer_bottom').fadeOut();
+      }
+    });
+});
+

@@ -354,14 +354,13 @@
 　　　　　　<%= yield %>
 
 <!-------------------------------非ログイン時のPC時のfooterのリンクを記述しています------------------------------------------->
-
-          <footer class="footer_bottom">
-            <div class="page_top">
+          <div class="page_top">
                <a href="">
                    <%= image_tag "images.png", size: "45x45", class: "page_top" %>
                </a>
-            </div>
+          </div>
 
+          <footer class="footer_bottom_notlogin">
             <div class="footer_information_all">
               <div class="footer_picking_name">picking-inc</div>
               <div class="footer_privacy_policy"><%= link_to "プライバシーポリシー",privacy_policy_path,style:  "color:white;" %></div>
