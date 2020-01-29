@@ -60,14 +60,10 @@ $(function(){
 });
 
 /* レスポンシブ時のfooter_bottomの動きを指示しています */
+
 $(function(){
-  $(".footer_bottom").hide();
-    $(window).scroll(function(){
-      if ($(this).scrollTop() > 60){
-        $(".footer_bottom").fadeIn();
-      }else{
-        $('.footer_bottom').fadeOut();
-      }
-    });
+  $(window).on("scroll touchmove", function(){
+      $(".responsive_footer_bottom").css('display', 'none').delay(500).fadeIn();
+  });
 });
 
