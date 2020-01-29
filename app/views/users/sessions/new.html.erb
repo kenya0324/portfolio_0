@@ -10,12 +10,12 @@
           <%= render 'layouts/error_messages', model: f.object %>
 
           <div class="field users_sessions_new_email">
-            <%= f.label :email %><br />
+            <%= f.label "Email" %><br />
             <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control session_form" %>
           </div>
 
           <div class="field users_sessions_new_password">
-            <%= f.label :password %><br />
+            <%= f.label "Password" %><br />
             <%= f.password_field :password, autocomplete: "current-password" , class: "form-control session_form"%>
           </div>
 
