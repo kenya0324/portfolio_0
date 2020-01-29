@@ -2,6 +2,7 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      post: 投稿
     attributes:
       user:
         id: ID
@@ -12,4 +13,8 @@ ja:
         user_image_id: プロフィール画像
         introduction: 紹介文
         password: パスワード
+      post:
+        post_image: 商品画像
+        post_name: 商品名
+        post_content: 説明文
 
