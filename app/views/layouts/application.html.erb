@@ -297,12 +297,13 @@
                 <% end %>
           </div>
 
-          <footer class="footer_bottom">
-            <div class="page_top">
+          <div class="page_top">
                <a href="">
                    <%= image_tag "images.png", size: "45x45", class: "page_top" %>
                </a>
-            </div>
+          </div>
+
+          <footer class="footer_bottom">
 
             <div id="post_link">
                <div class="fixed_post">
@@ -315,9 +316,11 @@
               <div class="footer_privacy_policy"><%= link_to "プライバシーポリシー",privacy_policy_path,style:  "color:white;" %></div>
               <div class="footer_term"><%= link_to "利用規約",term_path,style:  "color:white;" %></div>
             </div>
+          </footer>
 
 <!---------------------------------レスポンシブ時のfooterのリンクボタンを記述しています--------------------------------------->
 
+          <footer class="responsive_footer_bottom">
             <div class="responsive_footer_button_all">
               <%= link_to root_path, class:"footer_top_button",style:  "color:black;" do %>
                  <i class="fas fa-home fa-lg fa-home-color"></i>

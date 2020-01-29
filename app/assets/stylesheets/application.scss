@@ -306,12 +306,16 @@
 }
 
 .footer_bottom{
-	height: 60px;
+	height: 70px;
 	background: #333;
 }
 
+.responsive_footer_bottom{
+	display: none;
+}
+
 .footer_bottom_notlogin{
-	height: 60px;
+	height: 70px;
 	background: #333;
 }
 
@@ -378,7 +382,7 @@ footer{
   height: 60px;
   position: fixed;
   left: 75px;
-  bottom: 35px;
+  bottom: 75px;
   opacity: 0.6;
 }
 .page_top a{
@@ -736,6 +740,10 @@ input#search{
 }
 
 .footer_bottom{
+	display: none;
+}
+
+.responsive_footer_bottom{
 	height: 70px;
 	background: #333;
 	z-index: 5;
