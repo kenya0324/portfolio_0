@@ -311,8 +311,18 @@
 	background: #333;
 }
 
+.devise_footer_bottom{
+	height: 70px;
+	background: #333;
+}
+
 .responsive_footer_bottom{
 	display: none;
+}
+
+.homes_footer_bottom{
+	height: 70px;
+	background: #333;
 }
 
 .footer_bottom_notlogin{
@@ -742,6 +752,18 @@ input#search{
 
 .footer_bottom{
 	display: none;
+}
+
+.homes_footer_bottom{
+	height: 70px;
+	background: #333;
+	width: 100vw;
+}
+
+.devise_footer_bottom{
+	height: 70px;
+	background: #333;
+	width: 100vw;
 }
 
 .responsive_footer_bottom{

@@ -9,15 +9,15 @@
 }
 
 .about_all{
-	height: 620px;
+	height: 750px;
 	text-align: center;
 }
 
 .about_content_all{
 	background-color: rgba( 0, 0, 0, 0.5);
 	text-align: center;
-    padding-top: 105px;
-    height: 680px;
+    padding-top: 325px;
+    height: 750px;
 }
 
 .about_intro{
@@ -26,30 +26,56 @@
 	color: #fff;
 }
 
-.about_content{
+.about_content_1{
 	font-size: 25px;
 	font-weight: bold;
-	color: #fff;
+	color: #333;
+	margin-top: 30px;
+}
+
+.about_content_1_intro{
+	font-size: 30px;
+	font-weight: bold;
+	color: #333;
+	margin-top: 70px;
+}
+
+.about_content_1_text{
+	font-size: 20px;
+	margin-top: 20px;
 }
 
 .about_image1{
 	background-size: cover;
 	background-image: url(image_path("photo-1563443766220-d8134149a844.jpeg"));
     text-align: center;
-    height: 700px;
+    height: 750px;
 }
 
 .about_post_all{
 	text-align: center;
 }
 
+.about_center_top_title{
+	font-size: 40px;
+	font-weight: bold;
+	color: #333;
+	margin-top: 50px;
+}
+
 .about_post_top_link{
-	margin-top: 100px;
+	margin-top: 80px;
 	text-align: center;
 }
 
+.about_post_top_link :hover{
+	margin-top: 100px;
+	text-align: center;
+	text-decoration: none;
+	background: deepskyblue;
+}
 
-.about_post_start{
+.about_post_start {
 	font-size: 30px;
 	text-align: center;
 	font-weight: bolder;
@@ -59,7 +85,7 @@
     background: #1E90FF;
 }
 
-.about_post_start :hover{
+.about_post_start a :hover{
     background: deepskyblue;
 }
 
@@ -82,26 +108,46 @@
 	top: -10px;
     left: 0px;
 	width: 100%;
-	margin-top: 10px;
+	padding-top: 15px;
 	margin-bottom: 20px;
 	background: #fff;
 	z-index: 20;
 }
 
 .about_all{
-	height: 762px;
+	height: auto;
 	text-align: center;
+	margin-top: 56px;
 }
 
 .about_content_all{
 	background-color: rgba( 0, 0, 0, 0.5);
 	text-align: center;
     padding-top: 105px;
-    height: 762px;
+    height: 300px;
+}
+
+.about_center_top_title{
+	font-size: 25px;
+	font-weight: bold;
+	color: #333;
+	margin-top: 0px;
+}
+
+.about_content_1_intro{
+	font-size: 18px;
+	font-weight: bold;
+	color: #333;
+	margin-top: 30px;
+}
+
+.about_content_1_text{
+	font-size: 11px;
+	margin-top: 20px;
 }
 
 .about_intro{
-	font-size: 33px;
+	font-size: 32px;
 	font-weight: bolder;
 	color: #fff;
 }
@@ -118,7 +164,13 @@
     background-size: cover;
 	background-image: url(image_path("photo-1563443766220-d8134149a844.jpeg"));
     text-align: center;
-    height: 812px;
+    height: 300px;
+}
+
+.about_post_top_link{
+	margin-top: 50px;
+	margin-bottom: 50px;
+	text-align: center;
 }
 
 .about_post_start{
@@ -131,7 +183,7 @@
     background: #1E90FF;
 }
 
-.about_footer_bottom{
+.footer_bottom{
 	height: 50px;
 	background: #333;
 }
