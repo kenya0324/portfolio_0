@@ -5,7 +5,8 @@
 		        <% @hashtags.each do |hash| %>
 		           <!--%= link_to xx_path(name: hash.hashname) do  -->
 		           <%= link_to "/admins/post/hashtag/#{hash.hashname}" do  %>
-			          <div class="admins_hash_name">#<%= render_with_admins_hashtags(hash.hashname) %>
+			          <div class="admins_hash_name">
+			          #<%= render_with_admins_hashtags(hash.hashname) %>
 			          <%= link_to '削除', admins_hashtag_path(hash),method: :delete, data:{ confirm: '本当に削除して良いですか?',cancel: 'やめる', commit: '削除する'}, title: '削除確認',style:  "color:black;" , class:"btn-sm btn-light"%>
 			          </div>
 			       <% end %>

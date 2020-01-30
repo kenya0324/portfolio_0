@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.user_show_delete_user{
+	margin-left: 450px;
+}
+
 .user_show_title{
 	margin-left: 50px;
 }
@@ -70,6 +74,9 @@
 @media screen and (max-width:375px){
 
 /*-------user_show-------------------------------*/
+.user_show_delete_user{
+	margin-left: 100px;
+}
 
 .user_show_title{
 	margin-top: 50px;

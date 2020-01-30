@@ -11,11 +11,10 @@
 				            <%= @user.name %>
 				        </div>
 				        <% if @user.introduction.nil? %>
+	                    <% else %>
 	                        <div class="user_show_user_introduction">
 						        <%= @user.introduction %>
 						    </div>
-	                    <% else %>
-
 						<% end %>
 					    <div class="user_show_follow" id = "follow-count">
 				            <%= render 'follow_count' %>
@@ -25,7 +24,7 @@
 
 	            <div class="user_show_option_responsive">
 		            	<% if user_signed_in? %>
-		            	    <% if @user.id == current_user.id? %>
+		            	    <% if @user.id == current_user.id %>
 		               	        <div class="user_show_option_list">
 					               	<%= link_to 'want list', want_path(current_user), class:"btn-sm btn-light" %>
 								    <%= link_to '編集', edit_users_user_path(current_user), remote: true, class:"btn-sm btn-light " %>
@@ -41,7 +40,7 @@
 
 	            <div class="col-3 user_show_option">
 		            	<% if user_signed_in? %>
-		            	    <% if @user.id == current_user.id? %>
+		            	    <% if @user.id == current_user.id %>
 		               	        <div class="user_show_option_list">
 					               	<%= link_to 'want list', want_path(@user),class:"btn-sm btn-light " %>
 								    <%= link_to '編集', edit_users_user_path(@user), remote: true, class:"btn-sm btn-light " %>
@@ -113,7 +112,7 @@
 		    </div>
 		<% else %>
 		    <div class="row">
-		    	<h5><%= @user.name %>さんは退会済みです。</h5>
+		    	<h5 class="user_show_delete_user"><%= @user.name %>さんは退会済みです。</h5>
 		    </div>
 		<% end %>
 
