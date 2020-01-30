@@ -49,18 +49,12 @@ $(function(){
 
 /* about_barの動きを指示しています */
 $(function(){
-  $(".user_notlogin_about_all").hide();
-    $(window).scroll(function(){
-      if ($(this).scrollTop() > 60){
-        $(".user_notlogin_about_all").fadeIn();
-      }else{
-        $('.user_notlogin_about_all').fadeOut();
-      }
-    });
+  $(window).on("scroll touchmove", function(){
+      $(".user_notlogin_about_all").css('display', 'none').delay(300).fadeIn();
+  });
 });
 
 /* レスポンシブ時のfooter_bottomの動きを指示しています */
-
 $(function(){
   $(window).on("scroll touchmove", function(){
       $(".responsive_footer_bottom").css('display', 'none').delay(300).fadeIn('fast');

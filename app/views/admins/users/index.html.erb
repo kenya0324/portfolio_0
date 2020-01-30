@@ -1,21 +1,23 @@
 <div class="container clearfix">
     <h5 class= "admins_all_user_title">all user</h5>
         <div class="row">
-	        <table>
-	        	<tr>
-	        		<th></th>
-	        		<th>name</th>
-	        		<th>email</th>
-	        	</tr>
-	        <% @users.each do |user| %>
-	            <div class="admins_all_user">
-		        	<tr class="admins_all_user_line">
-		        		<td class= "admins_all_user_image"><%= attachment_image_tag user, :user_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "50x50" %></td>
-		        		<td class= "admins_all_user_name"><%= link_to "@#{user.name}" , admins_user_path(user.id) %></td>
-		        		<td class= "admins_all_user_email"><%= user.email %></td>
+        	<div class="admins_all_user_top">
+		        <table>
+		        	<tr>
+		        		<th></th>
+		        		<th>name</th>
+		        		<th>email</th>
 		        	</tr>
-		        </div>
-	        <% end %>
-            </table>
+		        <% @users.each do |user| %>
+		            <div class="admins_all_user">
+			        	<tr class="admins_all_user_line">
+			        		<td class= "admins_all_user_image"><%= attachment_image_tag user, :user_image, :fill,100,100, format: "jpeg", fallback: "no_image-c7305210e2d30bf8f19461ca05a151bba6413a44a35124f673246160efefdc5e.jpg", size: "50x50" %></td>
+			        		<td class= "admins_all_user_name"><%= link_to "@#{user.name}" , admins_user_path(user.id) %></td>
+			        		<td class= "admins_all_user_email"><%= user.email %></td>
+			        	</tr>
+			        </div>
+		        <% end %>
+	            </table>
+	        </div>
         </div>
 </div>

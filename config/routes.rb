@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   post   '/like/:post_id' => 'users/likes#like',   as: 'like'
   delete '/like/:post_id' => 'users/likes#unlike', as: 'unlike'
   put '/users/:id' => 'users/users#hide', as: 'hide'
+  put '/admins/users/:id' => 'admins/users#hide', as: 'admins_hide'
 
   devise_for :admins, controllers: {
     sessions: 'admins/sessions',
