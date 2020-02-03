@@ -20,6 +20,7 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   protected
+
   def reject_user
     @user = User.find_by(email: params[:user][:email].downcase)
     if @user
