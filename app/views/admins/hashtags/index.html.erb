@@ -3,7 +3,6 @@
         <div class="row">
         	<div class="admins_hash_all">
 		        <% @hashtags.each do |hash| %>
-		           <!--%= link_to xx_path(name: hash.hashname) do  -->
 		           <%= link_to "/admins/post/hashtag/#{hash.hashname}" do  %>
 			          <div class="admins_hash_name">
 			          #<%= render_with_admins_hashtags(hash.hashname) %>
