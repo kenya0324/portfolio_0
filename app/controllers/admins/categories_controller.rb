@@ -1,26 +1,19 @@
 class Admins::CategoriesController < ApplicationController
 
     def index
-		    @categories = Category.all
-	  end
+		@categories = Category.all
+	end
 
-
-	  def new
+	def new
         @category = Category.new
     end
 
     def create
         @category = Category.new(category_params)
-        respond_to do |format|
-         if @category.save!
-           format.html { redirect_to @category }
-           format.json { render :show, status: :created, location: @category }
-           format.js { @status = "success" }
-         else
-           format.html { render :index }
-           format.json { render json: @category.errors, status: :unprocessable_entity }
-           format.js { @status = "fail" }
-         end
+        if @category.save
+           render :create
+        else
+           render :create_error
         end
     end
 

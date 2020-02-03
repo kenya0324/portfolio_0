@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
   namespace :admins do
     root 'admins/posts#index', as: :root
-    resources :categories
+    resources :categories, only: [:index, :new, :create]
     resources :posts
     resources :users
     resources :hashtags, only: [:index, :destroy]

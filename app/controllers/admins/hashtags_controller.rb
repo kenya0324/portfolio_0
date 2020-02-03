@@ -10,11 +10,9 @@ class Admins::HashtagsController < ApplicationController
       @hashtag = Hashtag.find(params[:id])
       @hashtag.destroy
       redirect_to admins_hashtags_path
-      binding.pry
   end
 
-
- private
+  private
 
   def hashtag_params
       params.require(:hashtag).permit(:hashtag_id)
