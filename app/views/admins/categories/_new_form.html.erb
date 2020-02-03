@@ -1,28 +1,25 @@
 <div class="container clearfix">
 	<div class="modal-dialog" role="document">
 		<div class="category_index_m modal-content">
-
 			<%= form_for @category,url:admins_categories_path, remote: true do |f| %>
-
 				<div class="modal-header">
 	                <h4 class="modal-title">登録</h4>
+	                <div id="category_create_error_messages">
+		                <%= render 'layouts/error_messages', model: f.object %>
+		            </div>
 	                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 	                   <span aria-hidden="true">&times;</span>
 	                </button>
 	            </div>
-
 	            <div class="modal-body">
-						<div class="category_new_name">
-						    <%= f.text_field :name, class:"form-control" %>
-						</div>
+					<div class="category_new_name">
+					    <%= f.text_field :name, class:"form-control" %>
+					</div>
 				</div>
-
 				<div class="modal-footer actions">
 					    <%= f.submit class:"btn btn-primary"%>
 				</div>
-
 			<% end %>
-
 		</div>
 	</div>
 </div>
