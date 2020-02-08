@@ -90,12 +90,12 @@ class Users::UsersController < ApplicationController
           end
           @likes_recommend = post_recommend.where.not(id: x)
           if @likes_recommend.blank?
-             @random = Post.order("Random()").last
+             @random = Post.order("RAND()").last
              @posts = Post.all.order(created_at: :desc)
           end
         else
           if @random != nil
-            @random = Post.order("Random()").last
+            @random = Post.order("RAND()").last
             @posts = Post.all.order(created_at: :desc)
           else
             @random = "1"
@@ -104,7 +104,7 @@ class Users::UsersController < ApplicationController
         end
       else
         if @random != nil
-          @random = Post.order("Random()").last
+          @random = Post.order("RAND()").last
         else
           @random = "1"
           p @random
