@@ -1,3 +1,11 @@
 // Place all the styles related to the admins::hashtags controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*ハッシュタグ一覧のレイアウトを指示しています*/
+.admins_hash_all{
+	margin-top: 20px;
+	margin-left: 300px;
+	width: 550px;
+	float: left;
+}

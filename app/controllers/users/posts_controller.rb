@@ -66,6 +66,13 @@ class Users::PostsController < ApplicationController
 
   def update
       @post = Post.find(params[:id])
+      @post.user_id = current_user.id
+      @post.hashtags.clear
+      hashtags  = params[:post][:post_content].scan(/[#＃][\w\p{Han}ぁ-ヶｦ-ﾟー]+/)
+      hashtags.uniq.map do |hashtag|
+        tag = Hashtag.find_or_create_by(hashname: hashtag.downcase.delete('#'))
+        @post.hashtags << tag
+      end
       if @post.update(post_params)
          render :update
       else
@@ -81,7 +88,7 @@ class Users::PostsController < ApplicationController
   end
 
 
- private
+  private
 
   def post_params
       params.require(:post).permit(:user_id, :category_id, :hashtag_id, :post_image, :post_content, :post_name, :url ,:content)

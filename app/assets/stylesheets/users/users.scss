@@ -1,0 +1,197 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------PC時のCSSを指定しています--------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/* マイページの退会ボタンの余白を指定しています */
+.user_show_delete_user{
+	margin-left: 450px;
+}
+
+/* マイページのタイトルの余白を指定しています */
+.user_show_title{
+	margin-left: 50px;
+}
+
+/* マイページのユーザー情報のレイアウトを指定しています */
+.user_show_info{
+	width: 500px;
+	margin-left: 340px;
+}
+
+/* マイページのレスポンシブ時のボタンを非表示にしています */
+.user_show_option_responsive{
+	display: none;
+}
+
+/* マイページのボタン全体の横幅を指定しています */
+.user_show_option_list{
+	width: 180px;
+}
+
+/* マイページのユーザーの画像のレイアウトを指定しています */
+.user_show_image{
+	margin-bottom: 20px;
+	float: left;
+	border-radius: 40px;
+	width: 100px;
+}
+
+/* マイページのユーザーの名前のレイアウトを指定しています */
+.user_show_user_name{
+	margin-left: 120px;
+	margin-bottom: 10px;
+	border-bottom: 2px solid whitesmoke;
+	width: 200px;
+}
+
+/* マイページのユーザーのemailのレイアウトを指定しています */
+.user_show_user_email{
+	margin-left: 120px;
+	margin-bottom: 20px;
+	border-bottom: 2px solid whitesmoke;
+	width: 200px;
+}
+
+/* マイページのユーザーの自己紹介文のレイアウトを指定しています */
+.user_show_user_introduction{
+	margin-left: 120px;
+	border-bottom: 2px solid whitesmoke;
+	width: 200px;
+}
+
+/* マイページのfollowボタンの余白を指定しています */
+.user_show_follow{
+	margin-top: 10px;
+}
+
+.stats{
+	width: 300px;
+	margin-left: 120px;
+}
+
+/* マイページのeditボタンの位置を指定しています */
+#edit_user_2{
+	float: left;
+}
+
+/*-------------------------------------users_modal-----------------------------------*/
+
+/* マイページのモーダル画面の横幅を指定しています */
+.user_show_m{
+	width: 300px;
+}
+
+/*-------------------------------------user_want-------------------------------------*/
+
+/* wantページのタイトルの余白を指定しています */
+.user_want_title{
+	margin-left: 50px;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------responsive時のCSSを指定しています---------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width:375px){
+
+/* マイページの退会ボタンの余白を指定しています */
+.user_show_delete_user{
+	margin-left: 100px;
+}
+
+/* マイページのタイトルの余白を指定しています */
+.user_show_title{
+	margin-top: 50px;
+	margin-left: 30px;
+}
+
+/* マイページのユーザー情報のレイアウトを指定しています */
+.user_show_info{
+	width: 100%;
+	margin-top: 45px;
+	margin-left: 20px;
+}
+
+/* マイページのレスポンシブ時のボタンを表示にしています */
+.user_show_option_responsive{
+	display: block;
+	margin-left: 140px;
+}
+
+/* マイページのPC時のボタンを非表示にしています */
+.user_show_option{
+	display: none;
+}
+
+/* マイページのユーザーの画像のレイアウトを指定しています */
+.user_show_image{
+	margin-left: 10px;
+	margin-bottom: 20px;
+	float: left;
+	border-radius: 40px;
+	width: 100px;
+}
+
+/* マイページのユーザーの名前のレイアウトを指定しています */
+.user_show_user_name{
+	margin-left: 120px;
+	margin-bottom: 10px;
+	border-bottom: 2px solid whitesmoke;
+	width: 200px;
+}
+
+/* マイページのユーザーのemailのレイアウトを指定しています */
+.user_show_user_email{
+	margin-left: 120px;
+	margin-bottom: 20px;
+	border-bottom: 2px solid whitesmoke;
+	width: 200px;
+}
+
+/* マイページのユーザーの自己紹介文のレイアウトを指定しています */
+.user_show_user_introduction{
+	margin-left: 120px;
+	border-bottom: 2px solid whitesmoke;
+	width: 200px;
+}
+
+/* マイページのfollowボタンの余白を指定しています */
+.user_show_follow{
+	margin-top: 10px;
+	margin-left: 0px;
+}
+
+.stats{
+	width: 100%;
+	margin-left: 120px;
+}
+
+/* マイページのeditボタンの位置を指定しています */
+#edit_user_2{
+	float: left;
+}
+
+/*-------------------------------------users_modal-----------------------------------*/
+
+/* マイページのモーダル画面の横幅を指定しています */
+.user_show_m{
+	width: 300px;
+}
+
+/*-------------------------------------user_want-------------------------------------*/
+
+/* wantページのタイトルの余白を指定しています */
+.user_want_title{
+	margin-left: 30px;
+}
+
+/* wantページ全体の余白を指定しています */
+.user_want_all{
+	margin-top: 80px;
+}
+
+}

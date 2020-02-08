@@ -24,7 +24,6 @@
 	font-family: 'Noto Sans JP', '游ゴシック Medium', '游ゴシック体', 'Yu Gothic Medium', YuGothic, 'ヒラギノ角ゴ ProN', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
 }
 
-
 .clearfix::after {
 	content:"";
 	display: block;
@@ -37,6 +36,14 @@
 	margin-bottom: 10px;
 	text-align: center;
 }
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------PC時のCSSを指定しています--------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/*-------------------------------------------------header(PC)---------------------------------------------------------*/
+
+/* headerのレイアウトを指示しています */
 
 .header_top{
 	position: fixed;
@@ -53,11 +60,27 @@
 	z-index: 20;
 }
 
+/* headerのサイト名の位置を指示しています */
+
 .nav_title_name{
 	width: 320px;
 	margin-top: 10px;
 	margin-left: 15px;
 }
+
+/* headerのボタンの位置を指示しています */
+
+.nav_home_bar{
+    text-align: right;
+    position: fixed;
+    right: 10px;
+}
+
+.nav_home_select{
+	padding: 10px;
+}
+
+/* responsive時のheaderのボタンを消しています */
 
 .nav_home_responsive{
 	display: none;
@@ -71,6 +94,31 @@
 	display: none;
 }
 
+/* ログアウト時の検索フォームの位置を指示しています */
+
+.nav_search{
+	margin-top: 5px;
+	width: 250px;
+    position: fixed;
+    left: 615px;
+}
+
+.search_button{
+	color: black;
+	background: white;
+	border-radius: 20px;
+	text-decoration: none;
+	width: 40px;
+}
+
+.search_button:hover {
+    background: #333;
+}
+
+#search_button_link a{
+    text-decoration: none;
+}
+
 .nav_search_logout{
 	margin-top: 5px;
 	width: 250px;
@@ -78,9 +126,13 @@
     left: 615px;
 }
 
+/* 非ログイン時のabout_barを消しています */
+
 .user_notlogin_about{
 	display: none;
 }
+
+/* ログイン時のheaderのボタンの色を指定しています */
 
 .nav_root_button{
     color: black;
@@ -138,9 +190,57 @@
     color: #333;
 }
 
+/*---------------------------------------------------/header(PC)------------------------------------------------------*/
+
+/*---------------------------------------------------body(PC)---------------------------------------------------------*/
+
+.container{
+	margin-top: 70px;
+}
+
+#wrapper{
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+.fixed_post{
+   font-size: 25px;
+   position: fixed;
+   bottom: 0px;
+   right: 43px;
+   border-radius: 200px;
+   border: 2px solid whitesmoke;
+   display: inline-block;
+   padding: 0.6em 2em;
+   margin: 0 0 1em;
+   background: #fff;
+   color: #333;
+   cursor: pointer;
+   transition: all 0.3s ease 0s;
+}
+
+.fixed_post:hover {
+    font-size: 25px;
+    position: fixed;
+    bottom: 0px;
+    right: 43px;
+    border-radius: 200px;
+    background: #333;
+    border: 1px #333;
+}
+
+/*-------------------------------------------------sidebar_left(PC)---------------------------------------------------*/
+
+/*-------------------------category-------------------------*/
+
+/* categoryのtitleの位置を指示しています */
+
 .category_title{
 	margin-bottom: 20px;
 }
+
+/* categoryの全体の位置を指示しています */
 
 .fixed_category{
 	position: fixed;
@@ -150,6 +250,14 @@
     padding: 6px 40px;
 }
 
+/*-------------------------/category------------------------*/
+
+/*-------------------------------------------------sidebar_righit(PC)------------------------------------------------*/
+
+/*-------------------------ranking--------------------------*/
+
+/* rankingの全体の位置を指示しています */
+
 .fixed_rank{
 	position: fixed;
 	height: 300px;
@@ -158,34 +266,14 @@
     padding: 6px 40px;
 }
 
+/* rankingの投稿のレイアウトを指示しています */
+
 .fixed_recommend_post{
 	position: fixed;
 	height: 20px;
     bottom: 420px;
     left: -10px;
     padding: 6px 40px;
-}
-
-.index_link_title{
-	width: 150px;
-	border: 2px solid whitesmoke;
-	border-radius: 20px;
-	text-align: center;
-}
-
-.index_link_title :hover{
-	border-radius: 20px;
-	background: #333;
-}
-
-
-#index_link_title a{
-	text-decoration: none;
-	font-size: 25px;
-}
-
-#index_link_title a:hover{
-	text-decoration: none;
 }
 
 .rank_post_all{
@@ -248,6 +336,33 @@
     overflow: hidden;
 }
 
+/*-----------------------/ranking---------------------------*/
+
+.index_link_title{
+	width: 150px;
+	border: 2px solid whitesmoke;
+	border-radius: 20px;
+	text-align: center;
+}
+
+.index_link_title :hover{
+	border-radius: 20px;
+	background: #333;
+}
+
+#index_link_title a{
+	text-decoration: none;
+	font-size: 25px;
+}
+
+#index_link_title a:hover{
+	text-decoration: none;
+}
+
+/*-----------------------recommend_item----------------------*/
+
+/* recommend_itemの投稿のレイアウトを支持しています */
+
 .recommend_post_url{
 	height: 25px;
 	width: 120px;
@@ -262,25 +377,11 @@
     background: yellow;
 }
 
-.nav_home_bar{
-    text-align: right;
-    position: fixed;
-    right: 10px;
-}
+/*-----------------------/recommend_item----------------------*/
 
-.nav_home_select{
-	padding: 10px;
-}
+/*-----------------------about_bar----------------------------*/
 
-.container{
-	margin-top: 70px;
-}
-
-#wrapper{
-   display: flex;
-   flex-direction: column;
-   min-height: 100vh;
-}
+/* 非ログイン時のaboutページへのリンクのレイアウトを指示しています */
 
 .user_notlogin_about_all{
 	width: 100%;
@@ -306,6 +407,18 @@
 	text-decoration: none;
 }
 
+/*-----------------------/about_bar---------------------------*/
+
+/*--------------------------------------------------/body(PC)---------------------------------------------------------*/
+
+/*-------------------------------------------------footer(PC)---------------------------------------------------------*/
+
+/* footerのレイアウトを指示しています */
+
+footer{
+    margin-top: auto;
+}
+
 .footer_bottom{
 	height: 70px;
 	background: #333;
@@ -316,22 +429,9 @@
 	background: #333;
 }
 
-.responsive_footer_bottom{
-	display: none;
-}
-
 .homes_footer_bottom{
 	height: 70px;
 	background: #333;
-}
-
-.footer_bottom_notlogin{
-	height: 70px;
-	background: #333;
-}
-
-.responsive_footer_button_all{
-	display: none;
 }
 
 .footer_information_all{
@@ -340,6 +440,15 @@
 	margin-bottom: 20px;
 }
 
+/* 非ログイン時のfooterのレイアウトを指示しています */
+
+.footer_bottom_notlogin{
+	height: 70px;
+	background: #333;
+}
+
+/* footerのサイト名のレイアウトを指示しています */
+
 .footer_picking_name{
 	width: 95px;
 	float: left;
@@ -347,6 +456,7 @@
 	color: white;
 }
 
+/* footerのプライバシーポリシーへのリンクのレイアウトを指示しています */
 
 .footer_privacy_policy{
 	width: 100px;
@@ -356,12 +466,24 @@
 	font-size: 10px;
 }
 
+/* footerの利用規約へのリンクのレイアウトを指示しています */
+
 .footer_term{
 	width: 70px;
 	float: left;
 	margin-top: 6px;
 	margin-left: 10px;
 	font-size: 10px;
+}
+
+/* responsive時のfooterのボタンを消しています */
+
+.responsive_footer_bottom{
+	display: none;
+}
+
+.responsive_footer_button_all{
+	display: none;
 }
 
 .footer_top_button{
@@ -384,9 +506,7 @@
    display: none;
 }
 
-footer{
-    margin-top: auto;
-}
+/* page_topボタンのレイアウトを支持しています */
 
 .page_top{
   width: 60px;
@@ -409,11 +529,16 @@ footer{
   color: #333;
 }
 
-/*-------iphonex------------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------/footer(PC)--------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------responsive時のCSSを指定しています---------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
 
 @media screen and (min-width:376px){
-	.sp {
-		display: none!important;
+
+.sp {
+	display: none!important;
 	}
 }
 @media screen and (max-width:375px){
@@ -424,14 +549,9 @@ footer{
 	clear: both;
 }
 
+/*---------------------------------------------header(responsive)-----------------------------------------------------*/
 
-/*-------header-------------------------------*/
-
-.devise_title{
-	margin-top: 0px;
-	margin-bottom: 10px;
-	text-align: center;
-}
+/* headerのレイアウトを指示しています */
 
 .header_top{
 	position: fixed;
@@ -449,14 +569,30 @@ footer{
 	z-index: 20;
 }
 
-.navbar {
-	// width: 100vw;
-}
+/* headerのサイト名の位置を指示しています */
 
 .nav_title_name{
 	width: 100%;
 	margin-left: 0px;
 
+}
+
+.devise_title{
+	margin-top: 0px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+/* headerのボタンの位置を指示しています */
+
+.nav_home_bar{
+    text-align: right;
+    display: none;
+}
+
+.nav_home_select{
+	padding: 10px;
+	display: none;
 }
 
 .nav_home_responsive{
@@ -502,9 +638,7 @@ footer{
     display: none;
 }
 
-/* ---------------------------- */
-/* --- ハンバーガーアイコン --- */
-/* ---------------------------- */
+/*-----------------ハンバーガーアイコン--------------------*/
 
 #hm_category{
   position: fixed;
@@ -562,9 +696,10 @@ footer{
   transform: translateY(-5px) rotate(45deg);
   background-color: black;
 }
-/* ------------------------ */
-/* ------ spメニュー ------ */
-/* ------------------------ */
+
+/*-------------------/ハンバーガーアイコン---------------------*/
+
+/*--------------------- spメニュー --------------------------*/
 
 #sp_menu {
   width: 100vw;
@@ -589,7 +724,11 @@ footer{
   font-weight: bold;
 }
 
-/*-------header_search-------------------------------*/
+/*--------------------- /spメニュー -------------------------*/
+
+/*----------------------検索フォーム-------------------------*/
+
+/* 検索フォームの位置を指示しています */
 
 .nav_search{
 	position: fixed;
@@ -600,9 +739,13 @@ footer{
 	text-align: center;
 }
 
+/* 検索フォームのサイズを指示しています */
+
 input#search{
 	width: 50vw;
 }
+
+/* 検索フォームのレイアウトを指示しています */
 
 .search_button{
 	color: black;
@@ -610,7 +753,6 @@ input#search{
 	border-radius: 20px;
 	text-decoration: none;
 	margin-bottom: 1px;
-
 }
 
 .search_button:hover {
@@ -621,6 +763,8 @@ input#search{
     text-decoration: none;
 }
 
+/* 非ログイン時の検索フォームの位置を指示しています */
+
 .nav_search_logout{
 	margin-top: 5px;
 	margin-right: 0px;
@@ -628,7 +772,11 @@ input#search{
 	text-align: center;
 }
 
-/*-------category------------------------------------*/
+/*---------------------/検索フォーム--------------------------*/
+
+/*-----------------------category---------------------------*/
+
+/* categoryのtitleの位置を指示しています */
 
 .post_category_title{
 	margin-left: 20px;
@@ -637,6 +785,8 @@ input#search{
 .category_title{
 	margin-bottom: 20px;
 }
+
+/* categoryの全体の位置を指示しています */
 
 .fixed_category{
 	position: fixed;
@@ -651,7 +801,26 @@ input#search{
 	margin-top: 70px;
 }
 
-/*-------ranking------------------------------------*/
+/*-----------------------/category--------------------------*/
+
+/*--------------------------------------------/header(responsive)-----------------------------------------------------*/
+
+/*---------------------------------------------body(responsive)-------------------------------------------------------*/
+
+.container{
+	margin-top: 70px;
+}
+
+#wrapper{
+   overflow-x: hidden;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+/*-------------------------ranking--------------------------*/
+
+/* rankingの投稿のレイアウトを支持しています */
 
 .fixed_rank{
 	position: fixed;
@@ -660,40 +829,6 @@ input#search{
     right: 10px;
     padding: 6px 40px;
     display: none;
-}
-
-/*-------recommend------------------------------------*/
-
-.fixed_recommend_post{
-	position: fixed;
-	height: 20px;
-    bottom: 420px;
-    left: -10px;
-    padding: 6px 40px;
-    display: none;
-}
-
-.index_link_title{
-	width: 150px;
-	border: 2px solid whitesmoke;
-	border-radius: 20px;
-	text-align: center;
-	display: none;
-}
-
-.index_link_title :hover{
-	border-radius: 20px;
-	background: #333;
-}
-
-
-#index_link_title a{
-	text-decoration: none;
-	font-size: 25px;
-}
-
-#index_link_title a:hover{
-	text-decoration: none;
 }
 
 .rank_post_all{
@@ -729,25 +864,54 @@ input#search{
 	width: 120px;
 }
 
-.nav_home_bar{
-    text-align: right;
+/*-------------------------/ranking-------------------------*/
+
+/*-----------------------recommend_item----------------------*/
+
+/* recommend_itemの投稿のレイアウトを支持しています */
+
+.fixed_recommend_post{
+	position: fixed;
+	height: 20px;
+    bottom: 420px;
+    left: -10px;
+    padding: 6px 40px;
     display: none;
 }
 
-.nav_home_select{
-	padding: 10px;
+/*-----------------------/recommend_item----------------------*/
+
+.index_link_title{
+	width: 150px;
+	border: 2px solid whitesmoke;
+	border-radius: 20px;
+	text-align: center;
 	display: none;
 }
 
-.container{
-	margin-top: 70px;
+.index_link_title :hover{
+	border-radius: 20px;
+	background: #333;
 }
 
-#wrapper{
-   overflow-x: hidden;
-   display: flex;
-   flex-direction: column;
-   min-height: 100vh;
+
+#index_link_title a{
+	text-decoration: none;
+	font-size: 25px;
+}
+
+#index_link_title a:hover{
+	text-decoration: none;
+}
+
+/*--------------------------------------------/body(responsive)-------------------------------------------------------*/
+
+/*---------------------------------------------footer(responsive)------------------------------------------------------*/
+
+/* footerのレイアウトを指示しています */
+
+footer{
+    margin-top: auto;
 }
 
 .footer_bottom{
@@ -775,22 +939,26 @@ input#search{
 	position: fixed;
 }
 
-.footer_bottom_notlogin{
-	height: 70px;
-	background: #333;
-	width: 100vw;
-}
-
-.text-white{
-	display: none;
-}
-
 .responsive_footer_button_all{
 	display: block;
 }
 
 .footer_information_all{
 	display: block;
+}
+
+/* 非ログイン時のfooterのレイアウトを指示しています */
+
+.footer_bottom_notlogin{
+	height: 70px;
+	background: #333;
+	width: 100vw;
+}
+
+/* footerのボタンのレイアウトを指示しています */
+
+.text-white{
+	display: none;
 }
 
 .footer_top_button{
@@ -859,9 +1027,7 @@ input#search{
     color: white;
 }
 
-footer{
-    margin-top: auto;
-}
+/*----------------------page_topボタン------------------------*/
 
 .page_top{
   width: 60px;
@@ -882,6 +1048,9 @@ footer{
   color: #333;
 }
 
+/*-----------------------------------------------------------*/
+
+/*---------------------------------------------/footer(responsive)-----------------------------------------------------*/
 
 }
 

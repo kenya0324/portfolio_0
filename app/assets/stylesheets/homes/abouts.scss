@@ -1,0 +1,266 @@
+// Place all the styles related to the users::abouts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------PC時のCSSを指定しています--------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/* aboutページのタイトルの位置を指示しています */
+
+.about_title{
+	margin-top: 10px;
+	text-align: center;
+}
+
+/* aboutページ全体のレイアウトを指示しています */
+
+.about_all{
+	height: 750px;
+	text-align: center;
+}
+
+/*--------------------aboutページ上部--------------------------*/
+
+/* aboutページ上部の背景画像を指示しています */
+
+.about_image1{
+	background-size: cover;
+	background-image: url(image_path("photo-1563443766220-d8134149a844.jpeg"));
+    text-align: center;
+    height: 750px;
+}
+
+/* aboutページ上部のレイアウトを指示しています */
+
+.about_content_all{
+	background-color: rgba( 0, 0, 0, 0.5);
+	text-align: center;
+    padding-top: 325px;
+    height: 750px;
+}
+
+/* aboutページ上部の見出しのサイズ、色を指示しています */
+
+.about_intro{
+	font-size: 50px;
+	font-weight: bolder;
+	color: #fff;
+}
+
+/*--------------------/aboutページ上部--------------------------*/
+
+/*--------------------aboutページ下部---------------------------*/
+
+/* aboutページ下部のタイトルのサイズ、色を指示しています */
+
+.about_center_top_title{
+	font-size: 40px;
+	font-weight: bold;
+	color: #333;
+	margin-top: 50px;
+}
+
+/* aboutページ下部のレイアウトを指示しています */
+
+.about_content_1{
+	font-size: 25px;
+	font-weight: bold;
+	color: #333;
+	margin-top: 30px;
+}
+
+/* aboutページ下部の見出しのサイズ、色を指示しています */
+
+.about_content_1_intro{
+	font-size: 30px;
+	font-weight: bold;
+	color: #333;
+	margin-top: 70px;
+}
+
+/* aboutページ下部の本文のサイズ、位置を指示しています */
+
+.about_content_1_text{
+	font-size: 20px;
+	margin-top: 20px;
+}
+
+/*--------------------aboutページ下部のボタン--------------------*/
+
+/* aboutページ下部のボタンのレイアウトを指示しています */
+
+.about_post_all{
+	text-align: center;
+}
+
+.about_post_top_link{
+	margin-top: 80px;
+	text-align: center;
+}
+
+.about_post_top_link :hover{
+	margin-top: 100px;
+	text-align: center;
+	text-decoration: none;
+	background: deepskyblue;
+}
+
+.about_post_start {
+	font-size: 30px;
+	text-align: center;
+	font-weight: bolder;
+	padding: 18px;
+	border-radius: 200px;
+    border: 2px dodgerblue;
+    background: #1E90FF;
+}
+
+.about_post_start a :hover{
+    background: deepskyblue;
+}
+
+/*-------------------/aboutページ下部のボタン--------------------*/
+
+/*--------------------/aboutページ下部--------------------------*/
+
+/* footerのレイアウトを指示しています */
+
+.about_footer_bottom{
+    height: 50px;
+	background: #333;
+}
+
+#wrapper{
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------responsive時のCSSを指定しています---------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width:375px){
+
+/* aboutページのタイトルの位置を指示しています */
+
+.about_title{
+	text-align: center;
+	position: fixed;
+	top: -10px;
+    left: 0px;
+	width: 100%;
+	padding-top: 10px;
+	margin-bottom: 20px;
+	background: #fff;
+	z-index: 20;
+}
+
+/* aboutページ全体のレイアウトを指示しています */
+
+.about_all{
+	height: auto;
+	text-align: center;
+	margin-top: 56px;
+}
+
+/*--------------------aboutページ上部--------------------------*/
+
+/* aboutページ上部の背景画像を指示しています */
+
+.about_image1{
+	background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+	background-image: url(image_path("photo-1563443766220-d8134149a844.jpeg"));
+    text-align: center;
+    height: 300px;
+}
+
+/* aboutページ上部のレイアウトを指示しています */
+
+.about_content_all{
+	background-color: rgba( 0, 0, 0, 0.5);
+	text-align: center;
+    padding-top: 105px;
+    height: 300px;
+}
+
+/*--------------------/aboutページ上部--------------------------*/
+
+/*--------------------aboutページ下部---------------------------*/
+
+/* aboutページ下部のタイトルのサイズ、色を指示しています */
+
+.about_center_top_title{
+	font-size: 25px;
+	font-weight: bold;
+	color: #333;
+	margin-top: 0px;
+}
+
+/* aboutページ下部の見出しのサイズ、色を指示しています */
+
+.about_content_1_intro{
+	font-size: 18px;
+	font-weight: bold;
+	color: #333;
+	margin-top: 30px;
+}
+
+/* aboutページ下部の本文のサイズ、位置を指示しています */
+
+.about_content_1_text{
+	font-size: 11px;
+	margin-top: 20px;
+}
+
+.about_intro{
+	font-size: 32px;
+	font-weight: bolder;
+	color: #fff;
+}
+
+.about_content{
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+}
+
+/*--------------------aboutページ下部のボタン--------------------*/
+
+/* aboutページ下部のボタンのレイアウトを指示しています */
+
+.about_post_top_link{
+	margin-top: 50px;
+	margin-bottom: 50px;
+	text-align: center;
+}
+
+.about_post_start{
+	font-size: 30px;
+	text-align: center;
+	font-weight: bolder;
+	padding: 18px;
+	border-radius: 200px;
+    border: 2px dodgerblue;
+    background: #1E90FF;
+}
+
+/*--------------------/aboutページ下部のボタン-------------------*/
+
+/* footerのレイアウトを指示しています */
+
+.footer_bottom{
+	height: 50px;
+	background: #333;
+}
+
+#wrapper{
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+}
