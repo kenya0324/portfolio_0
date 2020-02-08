@@ -1,0 +1,600 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------PC時のCSSを指定しています--------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------posts_index---------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/*-------------------投稿のレイアウトを指示しています--------------------*/
+
+/* 投稿全体の位置を指定しています */
+.post{
+	float: left;
+	border: 2px solid whitesmoke;
+	margin: 10px;
+}
+
+/* 投稿全体の余白を指定しています */
+#post-all{
+	margin-left: 45px;
+	margin-bottom: 20px;
+}
+
+/* 投稿したuserのプロフィール画像の位置を指定しています */
+.post_index_user_name_image{
+	margin-top: 5px;
+	margin-left: 20px;
+	height: 50px;
+	display: block;
+}
+
+/* 画像の枠線と角丸を指定しています */
+img {
+    border-radius: 30px;
+    border: 2px solid whitesmoke;
+}
+
+/* 投稿したuserのプロフィール画像の枠線を指定しています */
+.user_image{
+	border: 2px solid whitesmoke;
+}
+
+/* 投稿した画像の角丸を指定しています */
+.post_image {
+    border-radius: 10px;
+}
+
+/* 投稿した画像の位置を指定しています */
+.post_index_post_image{
+	display: block;
+}
+
+/* 投稿した商品名のレイアウトを指定しています */
+.post_index_post_name{
+	margin-left: 20px;
+	margin-bottom: 10px;
+	border: 2px solid whitesmoke;
+	height: 30px;
+	width: 279px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* wantボタンの位置と高さを指定しています */
+.post_index_iine{
+	margin-left: 20px;
+	height: 40px;
+}
+
+/* wantボタンのサイズと色を指定しています */
+.iine__button{
+	margin-left: 10px;
+	font-size: 20px;
+	color: #333;
+}
+
+/* wantボタンのhover時の色を指定しています */
+.iine__button :hover{
+	color: dimgray;
+}
+
+/* 投稿のcategoryのリンクの縦幅と枠線、位置を指定しています */
+.post_index_post_category{
+	height: 30px;
+	width: 95px;
+	margin-left: 29px;
+	text-align: center;
+	border-radius: 20px;
+	border: 2px solid whitesmoke;
+}
+
+/* 投稿のcategoryのリンクのhover時の色を指定しています */
+.post_index_post_category :hover{
+	height: 26px;
+	background: #333;
+	border-radius: 22px;
+}
+
+/* 投稿のcategoryのリンクの文字色とリンクの下線を指定しています */
+#post_index_category_link a{
+    text-decoration: none;
+    color: black;
+    height: 30px;
+}
+
+/* 投稿した商品の説明文のレイアウトを指定しています */
+.post_index_content{
+	margin-top: 10px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+	border: 2px solid whitesmoke;
+	height: 30px;
+	width: 279px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.post_index_content p{
+	margin-bottom: 0px;
+    width: 275px;
+    white-space: nowrap;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* shopへのリンクボタンのレイアウトを指定しています */
+.post_index_url{
+	height: 25px;
+	width: 120px;
+	text-align: center;
+	border-radius: 10px;
+	margin-left: 20px;
+	background: gold;
+}
+
+/* shopへのリンクボタンのホバー時の背景色を指定しています */
+.post_index_url:hover {
+    background: yellow;
+}
+
+/* shopへのリンクボタンの文字色を指定しています */
+#post_url_link a{
+	text-decoration: none;
+    color: black;
+}
+
+/* shopへのリンクボタンの文字色を指定しています */
+#post_link a{
+    text-decoration: none;
+    color: black;
+}
+
+/* 投稿の詳細へのリンクの位置と余白を指定しています */
+.post_index_show{
+	text-align: right;
+	margin-right: 20px;
+	margin-bottom: 5px;
+}
+
+/* 詳細へのリンクボタンの文字色を指定しています */
+#post_index_show_link a{
+	text-decoration: none;
+}
+
+/* 投稿の下部のコンテンツの余白を指定しています */
+.post_index_bottom_link{
+	margin-bottom: 5px;
+}
+
+/* レスポンシブ時の投稿一覧画面でrankingとrecommend_itemを非表示しています */
+.responsive_rank_recommend{
+	display: none;
+}
+
+.responsive_all_title{
+	display: none;
+}
+
+.responsive_ranking{
+	display: none;
+}
+
+.post_index_wantranking_title{
+    display: none;
+}
+
+.responsive_recommend{
+	display: none;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------posts_show----------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/* 投稿詳細での全体の余白を指定しています */
+.post_show_all{
+	margin-bottom: 20px;
+	margin-left: 100px;
+}
+
+/* 投稿詳細での商品名のレイアウトを指定しています */
+.post_show_post_name{
+	margin-left: 20px;
+	margin-bottom: 10px;
+	border: 2px solid whitesmoke;
+	height: 30px;
+	width: 279px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+/* 投稿詳細での商品の説明文のレイアウトを指定しています */
+.post_show_content{
+	margin-top: 10px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+	border: 2px solid whitesmoke;
+	height: 125px;
+	width: 279px;
+	word-wrap: break-word;
+}
+
+/* 投稿詳細での編集ボタンの余白を指定しています */
+.post_edit_link{
+	margin-left: 50px;
+}
+
+/*---------------------------posts_comment--------------------------------*/
+
+/* 投稿詳細でのコメント全体の余白を指定しています */
+.post_comment_index_all{
+	margin-top: 15px;
+}
+
+/* 投稿詳細でのコメントのタイトルの余白を指定しています */
+.post_comment_index_title{
+	margin-left: 5px;
+}
+
+/* 投稿詳細でのコメントの下部分の余白を指定しています */
+.post_comment_index_top{
+	margin-bottom: 20px;
+}
+
+/* 投稿詳細でのコメントのレイアウトを指定しています */
+.post_comment_index{
+    border: 2px solid whitesmoke;
+    width: 600px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+/* 投稿詳細でのコメントの本文部分のレイアウトを指定しています */
+.post_comment_index_content{
+	border-bottom: 2px solid whitesmoke;
+	width: 575px;
+}
+
+#comment_content{
+	height: 60px;
+	width: 360px;
+}
+
+/* 投稿詳細でのコメント削除ボタンの余白を指定しています */
+.post_comment_index_delete{
+	margin-top: 12px;
+	margin-left: 110px;
+}
+
+/* 投稿詳細でのコメント送信ボタンの余白を指定しています */
+.post_comment_index_submit{
+	margin-top: 5px;
+}
+
+/* 投稿詳細でのコメントのmoreボタンのレイアウトを指定しています */
+.comment_more{
+	width: 50px;
+	text-align: center;
+	margin-top: 5px;
+	margin-left: 550px;
+	border-radius: 10px;
+}
+
+/* 投稿詳細でのコメントのmoreボタンのホバー時のレイアウトを指定しています */
+.comment_more:hover{
+	width: 50px;
+	text-align: center;
+	margin-left: 550px;
+	background: whitesmoke;
+}
+
+/*---------------------------/posts_comment--------------------------------*/
+
+/*---------------------------posts_category--------------------------------*/
+
+/* 投稿のカテゴリー一覧画面でのレイアウトを指定しています */
+.post_category_title{
+	margin-left: 20px;
+}
+
+#post_category a{
+    color: black;
+}
+
+/*---------------------------/posts_category--------------------------------*/
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------posts_new_modal-----------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/* モーダル画面の横幅を指定しています */
+.post_index_m{
+	width: 300px;
+}
+
+/* モーダル画面の画像の入力フォームの高さと余白を指定しています */
+.post_new_image{
+	height: 50px;
+	margin-bottom: 30px;
+}
+
+/* モーダル画面の商品名の入力フォームのレイアウトを指定しています */
+.post_new_post_name{
+	margin-bottom: 10px;
+}
+
+#post_post_name{
+	height: 40px;
+}
+
+/* モーダル画面のURLの入力フォームのレイアウトを指定しています */
+.post_new_post_url{
+	margin-bottom: 10px;
+}
+
+#post_url{
+	height: 40px;
+}
+
+/* モーダル画面の商品の説明文の入力フォームの余白を指定しています */
+.post_new_content{
+	margin-bottom: 10px;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------responsive時のCSSを指定しています---------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width:375px){
+
+/*------------------------------------------------------------------------------------------------------------------- */
+/*-------post_index---------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------------------------------------------------------------- */
+
+/* レスポンシブ時の投稿一覧画面でrankingとrecommend_itemを表示しています */
+.responsive_rank_recommend{
+	display: block;
+}
+
+.responsive_ranking{
+	display: block;
+}
+
+.responsive_recommend{
+	display: block;
+}
+
+/*-------------------------------------------- ranking(responsive)----------------------------------------------------*/
+
+/* レスポンシブ時の投稿一覧画面でrankingのタイトルのレイアウトを指定しています */
+.responsive_ranking_title{
+	margin-top: 40px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+    width: 89.5vw;
+    border-bottom: 2px solid #333;
+}
+
+.post_index_wantranking_title{
+    display: block;
+    margin-left: 20px;
+}
+
+/* レスポンシブ時の投稿一覧画面でrankingの順位番号の余白を指定しています */
+.responsive_rank_number{
+	margin-left: 60px;
+	margin-bottom: 5px;
+}
+
+/* レスポンシブ時の投稿一覧画面でranking全体の横幅を指定しています */
+.responsive_all_ranks{
+	width: 125px;
+	float: left;
+}
+
+/* レスポンシブ時の投稿一覧画面でrankingの投稿のレイアウトを指定しています */
+.responsive_rank_post_all{
+	margin-left: 8px;
+	width: 110px;
+	border: 2px solid whitesmoke;
+}
+
+/* レスポンシブ時の投稿一覧画面でrankingの投稿の画像のレイアウトを指定しています */
+.responsive_rank_post_image{
+    margin-left: -7px;
+    display: inline-block;
+}
+
+/* レスポンシブ時の投稿一覧画面でrankingの投稿の商品名のレイアウトを指定しています */
+#responsive_rank_post_name{
+	display: inline-block;
+	margin-left: 5px;
+	margin-bottom: 5px;
+	padding: auto;
+	height: 25px;
+	color: black;
+	border: 2px solid whitesmoke;
+	width: 96.5px;
+	white-space: nowrap;
+    word-wrap: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+/* レスポンシブ時の投稿一覧画面でrankingの投稿のURLのレイアウトを指定しています */
+.responsive_rank_post_url{
+	height: 25px;
+	width: 96.5px;
+	text-align: center;
+	border-radius: 10px;
+	margin-left: 4px;
+	margin-bottom: 10px;
+	background: gold;
+}
+
+/*--------------------------------------------/ranking(responsive)----------------------------------------------------*/
+
+/*-------------------------------------------recommend_item(responsive)-----------------------------------------------*/
+
+/* レスポンシブ時の投稿一覧画面でrecommend_item全体の余白を指定しています */
+.post_responsive_recommend_all{
+	margin-left: 15px;
+}
+
+/* レスポンシブ時の投稿一覧画面でrecommend_itemのタイトルの余白を指定しています */
+.responsive_recommend_title{
+	margin-top: 20px;
+	margin-left: 20px;
+    width: 89.5vw;
+    border-bottom: 2px solid #333;
+}
+
+/*-------------------------------------------/recommend_item(responsive)----------------------------------------------*/
+
+/* レスポンシブ時の投稿一覧画面でのタイトルのレイアウトを指定しています */
+.responsive_all_title{
+	display: block;
+	margin-top: 20px;
+	margin-left: 20px;
+    width: 89.5vw;
+    border-bottom: 2px solid #333;
+}
+
+/* レスポンシブ時のカテゴリーの投稿一覧画面での全体の余白を指定しています */
+.post_category_all{
+	margin-top: 40px;
+	margin-bottom: 80px;
+}
+
+/* レスポンシブ時の検索後の投稿一覧画面での全体の余白を指定しています */
+.post_search_all{
+	margin-top: 40px;
+	margin-bottom: 80px;
+}
+
+/* レスポンシブ時のハッシュタグの投稿一覧画面での全体の余白を指定しています */
+.post_hashtag_all{
+	margin-top: 40px;
+	margin-bottom: 80px;
+}
+
+/* レスポンシブ時のフォローユーザーの投稿一覧画面での全体の余白を指定しています */
+.post_follow_index_all{
+	margin-top: 40px;
+	margin-bottom: 80px;
+}
+
+/* レスポンシブ時の投稿一覧画面での全体の余白を指定しています */
+#post-all{
+	margin-left: 15px;
+	margin-bottom: 100px;
+}
+
+/*-------------------------------------------------------------------------------------------------------------------*/
+/*-------post_show---------------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------------------------------*/
+
+/* レスポンシブ時の投稿詳細画面での全体の余白を指定しています */
+.post_show_all{
+	margin-top: 40px;
+	margin-left: 15.5px;
+	margin-bottom: 80px;
+}
+/* レスポンシブ時の投稿詳細画面での編集ボタンの余白を指定しています */
+.post_edit_link{
+	margin-left: 50px;
+	margin-right: 5px;
+}
+
+/*-------------------------------------posts_comment-------------------------------------*/
+
+/* レスポンシブ時の投稿詳細画面でのコメント全体のレイアウトを指定しています */
+.post_comment_index_all{
+	margin-top: 15px;
+	width: 93.5vw;
+}
+
+.post_comment_index_top{
+	margin-bottom: 20px;
+}
+
+/* レスポンシブ時の投稿詳細画面でのコメントのタイトルの余白を指定しています */
+.post_comment_index_title{
+	margin-left: 5px;
+}
+
+/* レスポンシブ時の投稿詳細画面での投稿されたコメント全体のレイアウトを指定しています */
+.post_comment_index{
+    border: 2px solid whitesmoke;
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+/* レスポンシブ時の投稿詳細画面での投稿されたコメント全体のレイアウトを指定しています */
+.post_comment_index_content{
+	border-bottom: 2px solid whitesmoke;
+	width: 100%;
+}
+
+#comment_content{
+	height: 60px;
+	width: 93.5vw;
+}
+
+/* レスポンシブ時の投稿詳細画面でのコメント削除ボタンの余白を指定しています */
+.post_comment_index_delete{
+	margin-top: 12px;
+	margin-left: 0px;
+}
+
+/* レスポンシブ時の投稿詳細画面でのコメント本文の横幅を指定しています */
+#comments_area{
+	width: 100%;
+}
+
+/* レスポンシブ時の投稿詳細でのコメントのmoreボタンのレイアウトを指定しています */
+.comment_more{
+	width: 100%;
+	text-align: center;
+	margin-top: 5px;
+	margin-left: 0px;
+	border-radius: 10px;
+}
+
+/* レスポンシブ時の投稿詳細でのコメントのmoreボタンのホバー時のレイアウトを指定しています */
+.comment_more:hover{
+	width: 100%;
+	text-align: center;
+	margin-left: 0px;
+	background: whitesmoke;
+}
+
+/*-------------------------------------/posts_comment-------------------------------------*/
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------posts_modal---------------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/* レスポンシブ時のモーダル画面の横幅を指定しています */
+#post-modal {
+	width: 100vw;
+}
+
+/* レスポンシブ時のモーダル画面の商品名の入力フォームの高さを指定しています */
+#post_post_name{
+	height: 40px;
+}
+
+/* レスポンシブ時のモーダル画面のURLの入力フォームの高さを指定しています */
+#post_url{
+	height: 40px;
+}
+
+}

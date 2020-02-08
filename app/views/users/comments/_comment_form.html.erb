@@ -1,6 +1,6 @@
 	<%= form_for @comment,url:users_post_comments_path(@post), remote: true do |f| %>
-	<%= f.text_field :content , class:"form-control" %>
-  <div class="post_comment_index_submit">
-	<%= f.submit "コメントをする" , class:"btn-sm btn-light " %>
-  </div>
+	    <%= f.text_field :content , class:"form-control" %>
+            <div class="post_comment_index_submit">
+	            <%= f.submit "コメントをする" , class:"btn-sm btn-light " %>
+            </div>
 	<% end %>

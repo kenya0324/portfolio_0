@@ -1,0 +1,162 @@
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*--------------------------------------------PC時のCSSを指定しています--------------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+/* ログイン画面全体のレイアウトを指定しています */
+.users_sessions_new_all{
+	width: 280px;
+	text-align: center;
+	margin-left: 410px;
+	margin-bottom: 40px;
+	padding-top: 10px;
+}
+
+/* ログイン画面のemailの入力フォームの余白を指定しています */
+.users_sessions_new_email{
+	margin-top: 20px;
+}
+
+/* ログイン画面のパスワードの入力フォームの余白を指定しています */
+.users_sessions_new_password{
+	margin-top: 10px;
+}
+
+/* ログイン画面のパスワードの入力フォームの余白を指定しています */
+.users_sessions_new_pass_rem{
+	margin-bottom: 20px;
+}
+
+/* ログイン画面のパスワードの入力フォームの余白を指定しています */
+.new_user_password{
+	margin-top: 20px;
+}
+
+/* ログイン画面のSNSボタン全体の余白を指定しています */
+.sns_login{
+	margin-top: 20px;
+}
+
+/* ログイン画面のfacebookボタンの余白と横幅を指定しています */
+.facebook_log{
+    margin-top: 10px;
+}
+
+/* ログイン画面のfacebookボタンの余白と横幅を指定しています */
+.facebook_log_boot{
+	width: 100%;
+	margin-bottom: 5px;
+}
+
+/* ログイン画面のgoogleボタンの余白を指定しています */
+.google_log{
+    margin-top: 10px;
+}
+
+/* ログイン画面のgoogleボタンの余白と横幅を指定しています */
+.google_log_boot{
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+/* ログイン画面のログインボタンの横幅を指定しています */
+.session_form{
+	width: 70px;
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------responsive時のCSSを指定しています---------------------------------------------*/
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+@media screen and (max-width:375px){
+
+/* サインイン画面のタイトルのレイアウトを指定しています */
+.devise_title{
+	text-align: center;
+	position: fixed;
+	top: -10px;
+    left: 0px;
+	width: 100%;
+	padding-top: 20px;
+	margin-top: 0px;
+	margin-bottom: 20px;
+	background: #fff;
+	z-index: 20;
+}
+
+/* ログイン画面全体のレイアウトを指定しています */
+.users_sessions_new_all{
+	width: 100%;
+	text-align: center;
+	margin-top: 20px;
+	margin-left: 0px;
+	padding-top: 10px;
+}
+
+/* ログイン画面のパスワードの入力フォームの余白を指定しています */
+.users_sessions_new_pass_rem{
+	margin-bottom: 20px;
+}
+
+/* ログイン画面のログインボタンのレイアウトを指定しています */
+.users_registrations_new_submit_button{
+	width: 70%;
+	height: 50px;
+	background: #333;
+	color: white;
+	margin-bottom: 10px;
+}
+
+/* ログイン画面のログインボタンのホバー時のレイアウトを指定しています */
+.users_registrations_new_submit_button:hover{
+	width: 70%;
+	height: 50px;
+	background: dimgray;
+	color: white;
+}
+
+/* ログイン画面のパスワードの入力フォームの余白を指定しています */
+.new_user_password{
+	margin-top: 20px;
+}
+
+/* ログイン画面のSNSボタン全体の余白を指定しています */
+.sns_login{
+	margin-top: 20px;
+}
+
+/* ログイン画面のfacebookボタンの余白と横幅を指定しています */
+.facebook_log{
+    margin-top: 10px;
+}
+
+/* ログイン画面のfacebookボタンの余白と横幅を指定しています */
+.facebook_log_boot{
+	width: 80vw;
+	margin-bottom: 5px;
+}
+
+/* ログイン画面のgoogleボタンの余白を指定しています */
+.google_log{
+    margin-top: 10px;
+}
+
+/* ログイン画面のgoogleボタンの余白と横幅を指定しています */
+.google_log_boot{
+	width: 80vw;
+}
+
+/* ログイン画面のfooterのレイアウトを指定しています */
+.devise_footer_bottom{
+   height: 50px;
+   background: #333;
+}
+
+
+#wrapper{
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+}
