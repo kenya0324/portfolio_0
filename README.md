@@ -22,9 +22,10 @@
 ## Demo
 
 レスポンシブ時<br>
-<img src="https://user-images.githubusercontent.com/57277844/74133399-d5a6bb00-4c2b-11ea-9364-480ba70c3d6f.png" width="320px">
+<img src="https://user-images.githubusercontent.com/57277844/74133399-d5a6bb00-4c2b-11ea-9364-480ba70c3d6f.png" width="320px"><br>
+
 PC時<br>
-<img src="https://user-images.githubusercontent.com/57277844/74133426-e5260400-4c2b-11ea-928d-41cacc32fb58.png" width="500px">
+<img src="https://user-images.githubusercontent.com/57277844/74133426-e5260400-4c2b-11ea-928d-41cacc32fb58.png" width="800px">
 
 ## 開発環境
 
