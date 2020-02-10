@@ -1,7 +1,18 @@
-# README
+# Portfolio
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# はじめに
+
+　閲覧いただきありがとうございます。
+　こちらのアプリケーションは”世の中に溢れている「いい」モノに沢山出会える場所”をコンセプトに制作したものになります。
+　アプリケーション名は「Picking」です。
+
+# Picking
+
+# Demo
+　
+
+　
+
 
 Things you may want to cover:
 
