@@ -21,6 +21,8 @@
 
 ## Demo
 
+![PC](スクリーンショット 2020-02-10 17.27.26)
+![レスポンシブ](スクリーンショット 2020-02-10 17.28.03)
 
 ## 開発環境
 
@@ -36,7 +38,7 @@
 
 - ユーザー登録機能(devise)
 - ログイン機能(devise)
-- ユーザー情報編集機能
+- ユーザー情報編集機能(modal)
 - 退会機能
 - 投稿機能(modal)
 - 通知機能
@@ -63,30 +65,3 @@
 
 - レスポンシブ機能
 
-
-
-
-
-
-
-
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
