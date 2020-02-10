@@ -21,8 +21,8 @@
 
 ## Demo
 
-![PC](スクリーンショット 2020-02-10 17.27.26)
-![レスポンシブ](スクリーンショット 2020-02-10 17.28.03)
+![image](https://user-images.githubusercontent.com/57277844/74133399-d5a6bb00-4c2b-11ea-9364-480ba70c3d6f.png)
+![image](https://user-images.githubusercontent.com/57277844/74133426-e5260400-4c2b-11ea-928d-41cacc32fb58.png)
 
 ## 開発環境
 
