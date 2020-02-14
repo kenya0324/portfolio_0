@@ -349,20 +349,18 @@ img {
 
 /*---------------------------pagenation--------------------------------*/
 
-/*ページネーション全体の余白を指定しています*/
+
 .paginate_all{
 	margin-left: 360px;
 }
 
-/*ページネーション自体のデザインを指定しています*/
 .pagination>li>a {
-    border: none;     /*枠線をなくす*/
-    color: #696969;   /*文字の色を変える*/
+    border: none;     
+    color: #696969;   
 }
 
-/* 表示しているページ番号のデザインを指定しています */
 .pagination>.active>a {
-    background: #93c9ff;     /*背景の色を変える*/
+    background: #93c9ff;     
     border-radius: 10px;
 }
 
@@ -373,9 +371,8 @@ img {
     border-color: #007bff;
 }
 
-/*ホバー時のデザインを指定しています*/
 .pagination>li>a:hover {
-    border-radius: 10px;    /*角を丸くする*/
+    border-radius: 10px;    
     background-color: whitesmoke;
     color: black;
 }

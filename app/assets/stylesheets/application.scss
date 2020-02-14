@@ -204,7 +204,7 @@
    min-height: 100vh;
 }
 
-.fixed_post{
+.fixed_post a{
    font-size: 25px;
    position: fixed;
    bottom: 0px;
@@ -220,7 +220,7 @@
    transition: all 0.3s ease 0s;
 }
 
-.fixed_post:hover {
+.fixed_post:hover a{
     font-size: 25px;
     position: fixed;
     bottom: 0px;
